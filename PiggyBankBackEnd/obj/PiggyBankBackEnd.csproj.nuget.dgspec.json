@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Yulia\\source\\repos\\PiggyBankBackEnd\\PiggyBankBackEnd.csproj": {}
+    "C:\\Users\\Yulia\\source\\repos\\PiggyBank\\PiggyBankBackEnd\\PiggyBankBackEnd.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Yulia\\source\\repos\\PiggyBankBackEnd\\PiggyBankBackEnd.csproj": {
+    "C:\\Users\\Yulia\\source\\repos\\PiggyBank\\PiggyBankBackEnd\\PiggyBankBackEnd.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Yulia\\source\\repos\\PiggyBankBackEnd\\PiggyBankBackEnd.csproj",
+        "projectUniqueName": "C:\\Users\\Yulia\\source\\repos\\PiggyBank\\PiggyBankBackEnd\\PiggyBankBackEnd.csproj",
         "projectName": "PiggyBankBackEnd",
-        "projectPath": "C:\\Users\\Yulia\\source\\repos\\PiggyBankBackEnd\\PiggyBankBackEnd.csproj",
+        "projectPath": "C:\\Users\\Yulia\\source\\repos\\PiggyBank\\PiggyBankBackEnd\\PiggyBankBackEnd.csproj",
         "packagesPath": "C:\\Users\\Yulia\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Yulia\\source\\repos\\PiggyBankBackEnd\\obj\\",
+        "outputPath": "C:\\Users\\Yulia\\source\\repos\\PiggyBank\\PiggyBankBackEnd\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Yulia\\AppData\\Roaming\\NuGet\\NuGet.Config",

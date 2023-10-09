@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "gDokG+r7PzVCq0qxqGhBx8fFIDTGtmN2eTo1HZB+SzLhPmZhDtz5v1NzVIWz4dotrKpo8iNm93RI/aRJyRr3gw==",
+  "dgSpecHash": "YtaHCA2ZhUsvMix6Ybso2im9CJe1zPK11RXUplWhHpeN5IZ1uTfGWcHrBFxQPiPl4JS5YMoh9dzJdFsZFICwrQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Yulia\\source\\repos\\PiggyBankBackEnd\\PiggyBankBackEnd.csproj",
+  "projectFilePath": "C:\\Users\\Yulia\\source\\repos\\PiggyBank\\PiggyBankBackEnd\\PiggyBankBackEnd.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Yulia\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\Yulia\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
