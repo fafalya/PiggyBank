@@ -18,6 +18,8 @@ namespace PiggyBankBackEnd.Controllers
             _context = context;
         }
 
+        //CRUD-> create-read-update-delete
+
         //create
         [HttpPost]
         public async Task<IActionResult> CreateAim([FromBody] CreateUpdateAimDTO dto)
@@ -39,7 +41,7 @@ namespace PiggyBankBackEnd.Controllers
 
         //read
         [HttpGet]
-        public async Task<ActionResult<List<AimEntity>>> GetAllAims()
+        public async Task<ActionResult<IEnumerable<AimEntity>>> GetAllAims()
         {
             var aims = await _context.Aims.ToListAsync();
 

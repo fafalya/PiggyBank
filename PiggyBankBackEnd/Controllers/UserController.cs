@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Identity.Client;
 using PiggyBankBackEnd.Context;
+using PiggyBankBackEnd.DTOs;
 using PiggyBankBackEnd.Entities;
 
 namespace PiggyBankBackEnd.Controllers
@@ -15,11 +17,77 @@ namespace PiggyBankBackEnd.Controllers
 
         }
 
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<UserEntity>>> GetUsers ()
-        {
-            return await _context.Users.ToListAsync();
+        //CRUD-> create-read-update-delete
 
+        //create
+        [HttpPost]
+        public async Task <IActionResult> CreateUser([FromBody] CreateUpdateUserDTO dto)
+        {
+            var newUser = new UserEntity()
+            {
+                Name = dto.Name
+            };
+
+            await _context.Users.AddAsync(newUser);
+            await _context.SaveChangesAsync();
+
+            return Ok("New user is successfully created!");
         }
+
+        //read
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<UserEntity>>> GetAllUsers ()
+        {
+            var users = await _context.Users.ToListAsync();
+
+            return Ok(users);
+        }
+
+        [HttpGet]
+        [Route("{id}")]
+        public async Task<ActionResult<UserEntity>> GetUserById([FromRoute] long id )
+        {
+            var user =await  _context.Users.FirstOrDefaultAsync(q => q.Id == id);
+            if (user is null)
+            {
+                return NotFound("User is not found!");
+            }
+            return Ok(user);
+        }
+
+        //update
+        [HttpPut]
+        [Route("{id}")]
+        public async Task<IActionResult> UpdateUser([FromRoute] long id, [FromBody] CreateUpdateUserDTO dto)
+        {
+            var user = await _context.Users.FirstOrDefaultAsync(q => q.Id == id);
+            if (user is null)
+            {
+                return NotFound("User is not found!");
+            }
+            user.Name = dto.Name;
+
+            await _context.SaveChangesAsync();
+
+            return Ok("User is successfully updated!");
+        }
+
+        //delete
+        [HttpDelete]
+        [Route("{id}")]
+        public async Task<IActionResult> DeleteUser([FromRoute] long id)
+        {
+            var user = await _context.Users.FirstOrDefaultAsync(q => q.Id == id);
+            if (user is null)
+            {
+                return NotFound("User is not found!");
+            }
+            _context.Users.Remove(user);
+
+            await _context.SaveChangesAsync();
+
+            return Ok("User is successfully deleted!");
+        }
+
     }
 }
