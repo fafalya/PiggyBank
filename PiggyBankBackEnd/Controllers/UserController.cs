@@ -25,7 +25,9 @@ namespace PiggyBankBackEnd.Controllers
         {
             var newUser = new UserEntity()
             {
-                Name = dto.Name
+                Id= dto.Id,
+                Name = dto.Name,
+                Aims = dto.Aims,
             };
 
             await _context.Users.AddAsync(newUser);
@@ -65,7 +67,9 @@ namespace PiggyBankBackEnd.Controllers
             {
                 return NotFound("User is not found!");
             }
+            user.Id = dto.Id;
             user.Name = dto.Name;
+            user.Aims = dto.Aims;
 
             await _context.SaveChangesAsync();
 

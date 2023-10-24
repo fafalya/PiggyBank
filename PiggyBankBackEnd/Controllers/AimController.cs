@@ -26,11 +26,14 @@ namespace PiggyBankBackEnd.Controllers
         {
             var newAim = new AimEntity()
             {
+                Id = dto.Id,
                 Title = dto.Title,
                 Price = dto.Price,
                 Date = dto.Date,
                 PicturePath = dto.PicturePath,
-                WayOfSaving = dto.WayOfSaving
+                WayOfSaving = dto.WayOfSaving,
+                User = dto.User,
+                UserId= dto.UserId,
 
             };
             await _context.Aims.AddAsync(newAim);
@@ -74,11 +77,14 @@ namespace PiggyBankBackEnd.Controllers
                 return NotFound("Aim is not found!");
             }
 
+            aim.Id=dto.Id;
             aim.Title = dto.Title;
             aim.Price = dto.Price;
             aim.Date = dto.Date;
             aim.PicturePath = dto.PicturePath;
             aim.WayOfSaving = dto.WayOfSaving;
+            aim.User = dto.User;
+            aim.UserId = dto.UserId;
 
             await _context.SaveChangesAsync();
 

@@ -8,6 +8,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options => {
     Console.WriteLine("test");
 });
 builder.Services.AddControllers();
+builder.Services.AddControllersWithViews().AddNewtonsoftJson(options => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 //Config DB
