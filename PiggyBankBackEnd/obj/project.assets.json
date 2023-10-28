@@ -4072,19 +4072,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Student\\.nuget\\packages\\": {}
+    "C:\\Users\\Yulia\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\SYS\\project\\PiggyBank\\PiggyBankBackEnd\\PiggyBankBackEnd.csproj",
+      "projectUniqueName": "C:\\Users\\Yulia\\source\\repos\\PiggyBank\\PiggyBankBackEnd\\PiggyBankBackEnd.csproj",
       "projectName": "PiggyBankBackEnd",
-      "projectPath": "D:\\SYS\\project\\PiggyBank\\PiggyBankBackEnd\\PiggyBankBackEnd.csproj",
-      "packagesPath": "C:\\Users\\Student\\.nuget\\packages\\",
-      "outputPath": "D:\\SYS\\project\\PiggyBank\\PiggyBankBackEnd\\obj\\",
+      "projectPath": "C:\\Users\\Yulia\\source\\repos\\PiggyBank\\PiggyBankBackEnd\\PiggyBankBackEnd.csproj",
+      "packagesPath": "C:\\Users\\Yulia\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Yulia\\source\\repos\\PiggyBank\\PiggyBankBackEnd\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Student\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Yulia\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -4092,6 +4092,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\sdk\\7.0.306\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -4162,7 +4163,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
       }
     }
   }

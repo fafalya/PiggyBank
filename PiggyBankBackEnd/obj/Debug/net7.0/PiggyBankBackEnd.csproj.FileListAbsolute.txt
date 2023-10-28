@@ -306,3 +306,7 @@ D:\SYS\project\PiggyBank\PiggyBankBackEnd\bin\Debug\net7.0\Microsoft.AspNetCore.
 D:\SYS\project\PiggyBank\PiggyBankBackEnd\bin\Debug\net7.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 D:\SYS\project\PiggyBank\PiggyBankBackEnd\bin\Debug\net7.0\Newtonsoft.Json.dll
 D:\SYS\project\PiggyBank\PiggyBankBackEnd\bin\Debug\net7.0\Newtonsoft.Json.Bson.dll
+C:\Users\Yulia\source\repos\PiggyBank\PiggyBankBackEnd\bin\Debug\net7.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\Yulia\source\repos\PiggyBank\PiggyBankBackEnd\bin\Debug\net7.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\Yulia\source\repos\PiggyBank\PiggyBankBackEnd\bin\Debug\net7.0\Newtonsoft.Json.dll
+C:\Users\Yulia\source\repos\PiggyBank\PiggyBankBackEnd\bin\Debug\net7.0\Newtonsoft.Json.Bson.dll

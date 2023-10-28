@@ -26,7 +26,7 @@ namespace PiggyBankBackEnd.Controllers
         {
             var newAim = new AimEntity()
             {
-                Id = dto.Id,
+                //Id = dto.Id,
                 Title = dto.Title,
                 Price = dto.Price,
                 Date = dto.Date,
@@ -77,7 +77,7 @@ namespace PiggyBankBackEnd.Controllers
                 return NotFound("Aim is not found!");
             }
 
-            aim.Id=dto.Id;
+            //aim.Id=dto.Id;
             aim.Title = dto.Title;
             aim.Price = dto.Price;
             aim.Date = dto.Date;
