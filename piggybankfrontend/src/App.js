@@ -1,11 +1,11 @@
 // import User from './components/User'
 
-import { Navbar } from "react-bootstrap";
+import NavBar from './Navigation/NavBar'
 
 function App() {
   return (
     <div className="container">
-      <Navbar/>
+      <NavBar/>
       <h1>test</h1>
       
     </div>
