@@ -10,7 +10,7 @@ namespace PiggyBankBackEnd.DTOs
         public DateTime Date { get; set; }
         public string PicturePath { get; set; }
         public int WayOfSaving { get; set; }
-        public UserEntity User { get; set; }
+        public UserEntity? User { get; set; }
         public int UserId { get; set; }
 
         

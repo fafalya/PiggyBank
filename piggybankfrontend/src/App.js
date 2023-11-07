@@ -1,6 +1,7 @@
 // import User from './components/User'
 
 //import Header from "./Navigation/Header";
+import { Route, Routes } from "react-router";
 import NavBar from "./Navigation/NavBar";
 
 function App() {
@@ -9,7 +10,9 @@ function App() {
       <NavBar/> 
       {/* <Header/> */}
       <h1>test</h1>
-      
+      <Routes>
+        <Route />
+      </Routes>
     </div>
   );
 }

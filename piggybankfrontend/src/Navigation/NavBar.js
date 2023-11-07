@@ -7,34 +7,8 @@ function NavBar() {
     return (
         // <Navbar>
             <Fragment>
-        <div id="js-preloader" className="js-preloader">
-      <div className="preloader-inner">
-        <span className="dot"></span>
-        <div className="dots">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </div>
-    </div>
-    {/* <!-- ***** Preloader End ***** -->
-    
-    <!-- ***** Pre HEader ***** --> */}
-    <div className="pre-header">
-        <div className="container">
-            <div className="row">
-                <div className="col-lg-6 col-sm-6">
-                    <span>Hey! The Show is Starting in 15 Days.</span>
-                </div>
-                <div className="col-lg-6 col-sm-6">
-                    <div className="text-button">
-                        <a href="rent-venue.html">Contact Us Now! <i className="fa fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
+       
+        
     {/* <!-- ***** Header Area Start ***** --> */}
     <header className="header-area header-sticky">
         <div className="container">
@@ -42,7 +16,7 @@ function NavBar() {
                 <div className="col-12">
                     <nav className="main-nav">
                         {/* <!-- ***** Logo Start ***** --> */}
-                        <a href="index.html" className="logo">Art<em>Xibition</em></a>
+                        <a href="index.html" className="logo">Piggy<em>Bank</em></a>
                         {/* <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** --> */}
                         <ul className="nav">
@@ -64,7 +38,7 @@ function NavBar() {
     {/* <!-- ***** Header Area End ***** -->
 
     <!-- ***** Main Banner Area Start ***** --> */}
-    <div className="main-banner">
+    {/* <div className="main-banner">
         <div className="counter-content">
             <ul>
                 <li>Days<span id="days"></span></li>
@@ -90,11 +64,11 @@ function NavBar() {
                 </div>
             </div>
         </div>
-    </div>
+    </div> */}
     {/* <!-- ***** Main Banner Area End ***** --> */}
 
     {/* <!-- *** Owl Carousel Items ***--> */}
-    <div className="show-events-carousel">
+    {/* <div className="show-events-carousel">
         <div className="container">
             <div className="row">
                 <div className="col-lg-12">
@@ -127,11 +101,11 @@ function NavBar() {
                 </div>
             </div>
         </div>
-    </div>
+    </div> */}
 
     
     {/* <!-- *** Amazing Venus ***--> */}
-    <div className="amazing-venues">
+    {/* <div className="amazing-venues">
         <div className="container">
             <div className="row">
                 <div className="col-lg-9">
@@ -155,17 +129,17 @@ function NavBar() {
                 </div>
             </div>
         </div>
-    </div>
+    </div> */}
 
 
     {/* <!-- *** Map ***--> */}
-    <div className="map-image">
+    {/* <div className="map-image">
         <img src="assets/images/map-image.jpg" alt="Maps of 3 Venues"/>
-    </div>
+    </div> */}
 
 
     {/* <!-- *** Venues & Tickets ***--> */}
-    <div className="venue-tickets">
+    {/* <div className="venue-tickets">
         <div className="container-fluid">
             <div className="row">
                 <div className="col-lg-12">
@@ -250,11 +224,11 @@ function NavBar() {
                 </div>
             </div>
         </div>
-    </div>
+    </div> */}
 
 
     {/* <!-- *** Coming Events ***--> */}
-    <div className="coming-events">
+    {/* <div className="coming-events">
         <div className="left-button">
             <div className="main-white-button">
                 <a href="shows-events.html">Discover More</a>
@@ -306,11 +280,11 @@ function NavBar() {
                 </div>
             </div>
         </div>
-    </div>
+    </div> */}
 
 
     {/* <!-- *** Subscribe *** --> */}
-    <div className="subscribe">
+    {/* <div className="subscribe">
         <div className="container">
             <div className="row">
                 <div className="col-lg-4">
@@ -334,10 +308,10 @@ function NavBar() {
                 </div>
             </div>
         </div>
-    </div>
+    </div> */}
 
     {/* <!-- *** Footer *** --> */}
-    <footer>
+    {/* <footer>
         <div className="container">
             <div className="row">
                 <div className="col-lg-4">
@@ -414,26 +388,26 @@ function NavBar() {
                 </div>
             </div>
         </div>
-    </footer>
+    </footer> */}
 
     {/* <!-- jQuery --> */}
-    <script src="assets/js/jquery-2.1.0.min.js"></script>
+    {/* <script src="assets/js/jquery-2.1.0.min.js"></script> */}
 
     {/* <!-- Bootstrap --> */}
-    <script src="assets/js/popper.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
+    {/* <script src="assets/js/popper.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script> */}
 
     {/* <!-- Plugins --> */}
-    <script src="assets/js/scrollreveal.min.js"></script>
+    {/* <script src="assets/js/scrollreveal.min.js"></script>
     <script src="assets/js/waypoints.min.js"></script>
     <script src="assets/js/jquery.counterup.min.js"></script>
     <script src="assets/js/imgfix.min.js"></script> 
     <script src="assets/js/mixitup.js"></script> 
     <script src="assets/js/accordions.js"></script>
-    <script src="assets/js/owl-carousel.js"></script>
+    <script src="assets/js/owl-carousel.js"></script> */}
     
     {/* <!-- Global Init --> */}
-    <script src="assets/js/custom.js"/>
+    {/* <script src="assets/js/custom.js"/> */}
 
     
         </Fragment>

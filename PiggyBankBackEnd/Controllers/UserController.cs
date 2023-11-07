@@ -33,6 +33,7 @@ namespace PiggyBankBackEnd.Controllers
             await _context.Users.AddAsync(newUser);
             await _context.SaveChangesAsync();
 
+
             return Ok("New user is successfully created!");
         }
 
