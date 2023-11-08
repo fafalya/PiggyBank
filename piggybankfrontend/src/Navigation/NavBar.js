@@ -20,11 +20,10 @@ function NavBar() {
                         {/* <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** --> */}
                         <ul className="nav">
-                            <li><a href="index.html" className="active">Home</a></li>
-                            <li><a href="about.html">About Us</a></li>
-                            <li><a href="rent-venue.html">Rent Venue</a></li>
-                            <li><a href="shows-events.html">Shows & Events</a></li> 
-                            <li><a href="tickets.html">Tickets</a></li> 
+                            <li><a href="index.html" className="active">Главная</a></li>
+                            <li><a href="/about">О приложении</a></li>
+                            <li><a href="/aims">Мои хотелки</a></li>
+                            <li><a href="/users">Авторизация</a></li> 
                         </ul>        
                         <a className='menu-trigger'>
                             <span>Menu</span>
