@@ -11,7 +11,7 @@ import Users from "./pages/Users"
 
 function App() {
   return (
-    <div className="container">
+    <div>
       <NavBar/> 
       {/* <Header/> */}
       {/* <h1>test</h1> */}

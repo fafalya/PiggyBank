@@ -1,4 +1,4 @@
-const UrlBase = 'http://localhost:7216';
+const UrlBase = 'http://localhost:5000';
 
 //Users
 export const UrlUsers = UrlBase + '/api/Users';
