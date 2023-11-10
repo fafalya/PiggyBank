@@ -22,10 +22,10 @@ function Home() {
                             <i className="fa fa-arrow-up"></i>
                             <span>Next Show</span>
                         </div>
-                        <h6>Opening on Thursday, March 31st</h6>
-                        <h2>The Sunny Hill Festival 2022</h2>
+                        <h5>Приложение </h5>
+                        <h2>КОПИЛКА</h2>
                         <div className="main-white-button">
-                            <a href="ticket-details.html">Purchase Tickets</a>
+                            <a href="/aims">Начать копить</a>
                         </div>
                     </div>
                 </div>

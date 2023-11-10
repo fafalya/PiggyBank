@@ -20,7 +20,7 @@ function NavBar() {
                         {/* <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** --> */}
                         <ul className="nav">
-                            <li><a href="index.html" >Главная</a></li>
+                            <li><a href="/" >Главная</a></li>
                             <li><a href="/about">О приложении</a></li>
                             <li><a href="/aims">Мои хотелки</a></li>
                             <li><a href="/users">Авторизация</a></li> 
