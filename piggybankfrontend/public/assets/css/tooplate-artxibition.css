@@ -1134,7 +1134,7 @@ About Us Page
 
 .page-heading-about h2 {
   font-size: 50px;
-  color: #fff;
+  color: #f5f1f1;
   font-weight: 800;
   margin-bottom: 15px;
 }
@@ -1186,7 +1186,7 @@ About Us Page
 
 .about-item  .down-content span {
   font-size: 14px;
-  color: #7c838b;
+  color: #061a31;
   font-weight: 300;
   display: block;
   margin-top: 25px;;
@@ -1219,12 +1219,13 @@ About Us Page
 }
 
 .about-upcoming-shows ul li {
-  font-size: 14px;
+  font-size: 17px;
   font-weight: 300;
   margin-bottom: 10px;
 }
 
 .about-upcoming-shows p {
+  font-size: 17px;
   margin-bottom: 30px;;
 }
 
