@@ -13,6 +13,11 @@ function Users() {
                     </div>
                 </div>
             </div>
+
+            <div class="container">
+                <label for="exampleFormControlInput1" class="form-label">Нужно ввести имя пользователя</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Имя"/>
+            </div>
         </Fragment>
     );
 };
