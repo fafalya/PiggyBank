@@ -20,7 +20,7 @@ function Home() {
                     <div className="main-content">
                         <div className="next-show">
                             <i className="fa fa-arrow-up"></i>
-                            <span>Next Show</span>
+                            <span></span>
                         </div>
                         <h5>Приложение </h5>
                         <h2>КОПИЛКА</h2>

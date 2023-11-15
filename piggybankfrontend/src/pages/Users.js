@@ -7,8 +7,8 @@ function Users() {
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-12">
-                            <h2>Our Shows & Events</h2>
-                            <span>Check out upcoming and past shows & events.</span>
+                            <h2>Авторизация</h2>
+                            <span>В процессе разработки</span>
                         </div>
                     </div>
                 </div>

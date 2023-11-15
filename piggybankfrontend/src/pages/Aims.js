@@ -1,18 +1,20 @@
 import React, { Fragment, useState } from 'react';
 
-const [aim, setAim] = useState({
-    title: '',
-    price: '',
-    date: '',
-    picture: '',
-    waySaving: '',
-    user: {
-        id: 0,
-        name: ''
-    }
-})
+
 
 function Aims() {
+    const [aim, setAim] = useState({
+        title: '',
+        price: '',
+        date: '',
+        picture: '',
+        waySaving: '',
+        user: {
+            id: 0,
+            name: ''
+        }
+    })
+
     return (
         <Fragment>
             <div className="main-banner">
@@ -30,13 +32,11 @@ function Aims() {
                             <div className="main-content">
                                 <div className="next-show">
                                     <i className="fa fa-arrow-up"></i>
-                                    <span>Next Show</span>
+                                    <span></span>
                                 </div>
-                                <h6>Opening on Thursday, March 31st</h6>
-                                <h2>The Sunny Hill Festival 2022</h2>
-                                <div className="main-white-button">
-                                    <a href="ticket-details.html">Purchase Tickets</a>
-                                </div>
+                                <h4>В процессе разработки</h4>
+                                <h2>Цели для накопления</h2>
+                                
                             </div>
                         </div>
                     </div>
