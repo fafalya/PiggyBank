@@ -2,7 +2,7 @@ import React, { Fragment, useState } from 'react';
 
 
 
-function Aims() {
+const Aims =()=> {
     const [aim, setAim] = useState({
         title: '',
         price: '',
@@ -45,15 +45,21 @@ function Aims() {
 
             <div class="container">
                 <label for="exampleFormControlInput1" class="form-label">На что будем копить?</label>
-                <input type="text" class="form-control" id="exampleFormControlInput1" value={aim.title} placeholder="Хотелка"/>
+                <input type="text" class="form-control" 
+                value={aim.title} placeholder="Хотелка" 
+                onChange={event =>setAim({...aim, title: event.target.value})}/>
             </div>
             <div class="container">
                 <label for="exampleFormControlTextarea1" class="form-label">Сколько нужно накопить?</label>
-                <input type="text" class="form-control" id="exampleFormControlTextarea1" value={aim.price}  placeholder="Сумма"/>
+                <input type="text" class="form-control" 
+                value={aim.price}  placeholder="Сумма" 
+                onChange={event =>setAim({...aim, price: event.target.value})}/>
             </div>
             <div class="container">
                 <label for="exampleFormControlTextarea1" class="form-label">К какой дате нужно накопить?</label>
-                <input type="text"class="form-control" id="exampleFormControlTextarea1" value={aim.date}  placeholder="Дата"/>
+                <input type="text"class="form-control" 
+                value={aim.date}  placeholder="Дата" 
+                onChange={event =>setAim({...aim, date: event.target.value})}/>
             </div>
 
             <section class="container">
@@ -75,11 +81,15 @@ function Aims() {
             
             <div class="container">
                 <label for="exampleFormControlTextarea1" class="form-label">Картинка хотелки для мотивации</label>
-                <input type="text" class="form-control" id="exampleFormControlTextarea1" value={aim.picture} placeholder="Изображение"/>
+                <input type="text" class="form-control" 
+                value={aim.picture} placeholder="Изображение" 
+                onChange={event =>setAim({...aim, picture: event.target.value})}/>
             </div>
             <div class="container">
                 <label for="exampleFormControlTextarea1" class="form-label">Каким способом будем копить?</label>
-                <input type="text" class="form-control" id="exampleFormControlTextarea1" value={aim.waySaving}  placeholder="Способ накопления"/>
+                <input type="text" class="form-control" 
+                value={aim.waySaving}  placeholder="Способ накопления" 
+                onChange={event =>setAim({...aim, waySaving: event.target.value})}/>
             </div>
             <div class="container">
                 <button type="submit" class="btn btn-primary mb-3">Добавить цель</button>

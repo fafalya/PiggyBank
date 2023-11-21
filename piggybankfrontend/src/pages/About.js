@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 
-function About() {
+const About = () => {
     return (
         <Fragment>
             <div className="page-heading-about">

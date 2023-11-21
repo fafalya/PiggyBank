@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 
-function NotFound() {
+const NotFound =() => {
     return (
         <Fragment>
             <div className="page-heading-rent-venue">

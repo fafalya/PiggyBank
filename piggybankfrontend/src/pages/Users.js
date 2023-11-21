@@ -1,6 +1,18 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 
-function Users() {
+const Users =() => {
+    const [user, setUser] = useState({
+        name: '',
+        aims: {
+            id: 0,
+            title: '',
+            price: '',
+            date: '',
+            picture: '',
+            waySaving: '',
+        }
+    })
+
     return (
         <Fragment>
             <div className="page-heading-shows-events">
@@ -16,7 +28,9 @@ function Users() {
 
             <div class="container">
                 <label for="exampleFormControlInput1" class="form-label">Нужно ввести имя пользователя</label>
-                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Имя"/>
+                <input type="text" class="form-control" 
+                value={user.name} placeholder="Имя"
+                onChange={event =>setUser({...user, name: event.target.value})}/>
             </div>
         </Fragment>
     );

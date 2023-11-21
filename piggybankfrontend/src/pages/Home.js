@@ -1,7 +1,7 @@
 import React from 'react';
 import { Fragment } from "react";
 
-function Home() {
+const Home =() =>{
     return (
         
         <Fragment>
