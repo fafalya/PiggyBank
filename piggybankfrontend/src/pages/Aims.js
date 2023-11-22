@@ -44,6 +44,12 @@ const Aims =()=> {
             </div>
 
             <div class="container">
+                <label  class="form-label">Кто будет копить?</label>
+                <select class="form-select" aria-label="Default select example" placeholder="Хотелка">
+                    <option defaultValue selecte disabled>Пользователь</option>
+                </select>
+            </div>
+            <div class="container">
                 <label for="exampleFormControlInput1" class="form-label">На что будем копить?</label>
                 <input type="text" class="form-control" 
                 value={aim.title} placeholder="Хотелка" 

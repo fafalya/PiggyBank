@@ -1,4 +1,5 @@
 import React, { Fragment, useState } from 'react';
+import { UrlUsers } from '../urls/urlsList';
 
 const Users =() => {
     const [user, setUser] = useState({
@@ -12,6 +13,31 @@ const Users =() => {
             waySaving: '',
         }
     })
+
+    const AddNewUser = (event) => {
+        event.preventDefault()
+        const newUser = {...user}
+        create(newUser)
+        alert('Добавили нового пользователя')
+        console.log('Добавили нового пользователя', newUser)
+    }
+    const create =(newUser) => {
+        try {
+            const result = fetch(UrlUsers,{
+                method: "POST",
+                mode: 'cors',
+                body: JSON.stringify(newUser),
+                headers: {
+                    "Content-Type": "application/json",
+                },
+            });
+            let json = result.json();
+            console.log("Успешно выполнено", JSON.stringify(json));
+        } catch (error){
+            console.log("Ошибка", error);
+        }
+    }
+
 
     return (
         <Fragment>
@@ -31,6 +57,9 @@ const Users =() => {
                 <input type="text" class="form-control" 
                 value={user.name} placeholder="Имя"
                 onChange={event =>setUser({...user, name: event.target.value})}/>
+            </div>
+            <div class="container">
+                <button type="button" class="btn btn-info" onClick={AddNewUser}>Добавить пользователя</button>
             </div>
         </Fragment>
     );
