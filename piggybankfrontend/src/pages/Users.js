@@ -1,5 +1,6 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import { UrlUsers } from '../urls/urlsList';
+import axios from 'axios';
 
 const Users =() => {
     const [user, setUser] = useState({
@@ -14,29 +15,31 @@ const Users =() => {
         }
     })
 
-    const AddNewUser = (event) => {
-        event.preventDefault()
-        const newUser = {...user}
-        create(newUser)
-        alert('Добавили нового пользователя')
-        console.log('Добавили нового пользователя', newUser)
+    const[userList,setUserList] = useState([])
+
+    useEffect(()=>{
+        (async ()=> await Load())();
+    },[])
+
+    async function Load(){
+        const resultLoading = await axios.get(UrlUsers);
+        setUserList(resultLoading.data);
+        console.log(resultLoading.data);
     }
-    const create =(newUser) => {
+
+    async function AddNewUser (event) {
+        event.preventDefault();
         try {
-            const result = fetch(UrlUsers,{
-                method: "POST",
-                mode: 'cors',
-                body: JSON.stringify(newUser),
-                headers: {
-                    "Content-Type": "application/json",
-                },
+            await axios.post(UrlUsers,{
+                name: user.name,               
             });
-            let json = result.json();
-            console.log("Успешно выполнено", JSON.stringify(json));
-        } catch (error){
-            console.log("Ошибка", error);
+            alert("Добавили нового пользователя");
+            setUser("");
+        } catch(error){
+            alert(error);
         }
     }
+
 
 
     return (

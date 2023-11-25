@@ -1,8 +1,21 @@
 using Microsoft.EntityFrameworkCore;
 using PiggyBankBackEnd.Context;
 
+var nameCors = "PiggyBank3000";
+
+
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: nameCors,
+        policy =>
+        {
+            policy.WithOrigins("http://localhost:3000")
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+        });
+});
 builder.Services.AddDbContext<ApplicationDbContext>(options => {
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
     Console.WriteLine("test");
@@ -22,6 +35,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseCors(nameCors);
 app.UseHttpsRedirection();
 
 app.UseAuthorization();

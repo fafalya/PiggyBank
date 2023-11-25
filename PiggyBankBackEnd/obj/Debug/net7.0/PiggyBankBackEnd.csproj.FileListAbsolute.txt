@@ -390,3 +390,7 @@ C:\Users\Student\SYS\PiggyBank\PiggyBank\PiggyBankBackEnd\obj\Debug\net7.0\refin
 C:\Users\Student\SYS\PiggyBank\PiggyBank\PiggyBankBackEnd\obj\Debug\net7.0\PiggyBankBackEnd.pdb
 C:\Users\Student\SYS\PiggyBank\PiggyBank\PiggyBankBackEnd\obj\Debug\net7.0\PiggyBankBackEnd.genruntimeconfig.cache
 C:\Users\Student\SYS\PiggyBank\PiggyBank\PiggyBankBackEnd\obj\Debug\net7.0\ref\PiggyBankBackEnd.dll
+C:\Users\Yulia\source\repos\PiggyBank\PiggyBankBackEnd\bin\Debug\net7.0\System.Web.Cors.dll
+C:\Users\Yulia\source\repos\PiggyBank\PiggyBankBackEnd\bin\Debug\net7.0\System.Net.Http.Formatting.dll
+C:\Users\Yulia\source\repos\PiggyBank\PiggyBankBackEnd\bin\Debug\net7.0\System.Web.Http.dll
+C:\Users\Yulia\source\repos\PiggyBank\PiggyBankBackEnd\bin\Debug\net7.0\System.Web.Http.Cors.dll
