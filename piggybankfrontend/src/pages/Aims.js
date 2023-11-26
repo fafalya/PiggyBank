@@ -1,4 +1,5 @@
 import React, { Fragment, useState } from 'react';
+//import { UrlAimsById } from '../urls/urlsList';
 
 
 
@@ -14,6 +15,18 @@ const Aims =()=> {
             name: ''
         }
     })
+
+    // const[aimList,setAimList] = useState([])
+
+    // useEffect(()=>{
+    //     (async ()=> await Load())();
+    // },[])
+
+    // async function Load(){
+    //     const resultLoading = await axios.get(UrlAimsById);
+    //     setUserList(resultLoading.data);
+    //     console.log(resultLoading.data);
+    // }
 
     return (
         <Fragment>
