@@ -23,7 +23,7 @@ function NavBar() {
                             <li><a href="/" >Главная</a></li>
                             <li><a href="/about">О приложении</a></li>
                             <li><a href="/aims">На что копим</a></li>
-                            <li><a href="/users">Авторизация</a></li> 
+                            <li><a href="/users">Пользователи</a></li> 
                         </ul>        
                         <a className='menu-trigger'>
                             <span>Menu</span>

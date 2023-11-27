@@ -45,26 +45,14 @@ const Users =() => {
     async function EditUser (userList) {
         console.log(userList);
         setUser(userList)
-        //setUser(user.name);
-        // console.log(user.id);
-        // try { 
-        //     await axios.patch(UrlUsersById + user.id, {
-        //         name: user.name
-        //     });
-        //     alert("Пользователь отредактирован");
-        //     setUser("");
-        //     ClearInput();
-        //     Load();
-
-        // } catch (error) {
-        //     alert(error);
-        // }   
+          
     }
 
     async function UpdateUser (event ){
         event.preventDefault();
+        console.log(user.name);
         try {
-            await axios.patch(UrlUsersById + userList.find((u)=>u.id === id), {
+            await axios.patch(UrlUsersById + userList.find((u)=>u.id === user.id).id, {
                 name: user.name,
             });
             alert("Пользователь отредактирован");
@@ -93,8 +81,8 @@ const Users =() => {
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-12">
-                            <h2>Авторизация</h2>
-                            <span>В процессе разработки</span>
+                            <h2>Пользователи</h2>
+                            <span></span>
                         </div>
                     </div>
                 </div>
