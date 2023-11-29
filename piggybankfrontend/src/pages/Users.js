@@ -50,9 +50,8 @@ const Users =() => {
 
     async function UpdateUser (event ){
         event.preventDefault();
-        console.log(user.name);
         try {
-            await axios.patch(UrlUsersById + userList.find((u)=>u.id === user.id).id, {
+            await axios.put(UrlUsersById + userList.find((u)=>u.id === user.id).id, {
                 name: user.name,
             });
             alert("Пользователь отредактирован");
