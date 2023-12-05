@@ -1,5 +1,6 @@
-import React, { Fragment, useState } from 'react';
-//import { UrlAimsById } from '../urls/urlsList';
+import React, { Fragment,useEffect, useState } from 'react';
+import { UrlAims, UrlUsers } from '../urls/urlsList';
+import axios from 'axios';
 
 
 
@@ -16,18 +17,46 @@ const Aims =()=> {
         }
     })
 
-    // const[aimList,setAimList] = useState([])
+    const[aimList,setAimList] = useState([])
+    const[userList,setUserList] = useState([])
+    const[users,setUser]=useState()
 
-    // useEffect(()=>{
-    //     (async ()=> await Load())();
-    // },[])
+    useEffect(()=>{
+        (async ()=> await Load())();
+    },[])
 
-    // async function Load(){
-    //     const resultLoading = await axios.get(UrlAimsById);
-    //     setUserList(resultLoading.data);
-    //     console.log(resultLoading.data);
-    // }
+    async function Load(){
+        const resultLoadingAims = await axios.get(UrlAims);
+        setAimList(resultLoadingAims.data);
+        console.log(resultLoadingAims.data);
+        const resultLoadingUsers = await axios.get(UrlUsers);
+        setUserList(resultLoadingUsers.data);
+        console.log(resultLoadingUsers.data);
+    }
+    async function AddNewAim (event) {
+        event.preventDefault();
+        try {
+            await axios.post(UrlAims,{
+                title: aim.title,
+                price: aim.price,
+                date: aim.date,
+                picture: aim.picture,
+                waySaving: aim.waySaving,
+                user: {
+                    id: aim.user.id,
+                    name: aim.user.name
+                }              
+            });
+            alert("Добавили новую цель");
+            setAim("");
+            // ClearInput();
+            Load();
+        } catch(error){
+            alert(error);
+        }
+    }
 
+    
     return (
         <Fragment>
             <div className="main-banner">
@@ -60,8 +89,10 @@ const Aims =()=> {
                 <label  class="form-label">Кто будет копить?</label>
                 <select class="form-select" aria-label="Default select example" placeholder="Хотелка">
                     <option defaultValue selecte disabled>Пользователь</option>
+                    {userList.map((user) => <option value={user.id} key={user.id} onClick={setUser(user)}>{user.name}</option>) }
                 </select>
             </div>
+            
             <div class="container">
                 <label for="exampleFormControlInput1" class="form-label">На что будем копить?</label>
                 <input type="text" class="form-control" 
@@ -111,7 +142,7 @@ const Aims =()=> {
                 onChange={event =>setAim({...aim, waySaving: event.target.value})}/>
             </div>
             <div class="container">
-                <button type="submit" class="btn btn-primary mb-3">Добавить цель</button>
+                <button type="submit" class="btn btn-info" onClick={AddNewAim}>Добавить цель</button>
             </div>
         </Fragment>
 
