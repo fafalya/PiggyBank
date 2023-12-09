@@ -23,38 +23,49 @@ const Aims =()=> {
 
     useEffect(()=>{
         (async ()=> await Load())();
+        // const Load = async () => {
+        //     const result = await axios.get(UrlAims);
+        //     setAimList(result.data);
+        // }
+        // Load();
     },[])
 
     async function Load(){
         const resultLoadingAims = await axios.get(UrlAims);
         setAimList(resultLoadingAims.data);
         console.log(resultLoadingAims.data);
-        const resultLoadingUsers = await axios.get(UrlUsers);
+
+
+        
+        const resultLoadingUsers = await axios.get(UrlUsers); 
         setUserList(resultLoadingUsers.data);
         console.log(resultLoadingUsers.data);
     }
-    async function AddNewAim (event) {
-        event.preventDefault();
-        try {
-            await axios.post(UrlAims,{
-                title: aim.title,
-                price: aim.price,
-                date: aim.date,
-                picture: aim.picture,
-                waySaving: aim.waySaving,
-                user: {
-                    id: aim.user.id,
-                    name: aim.user.name
-                }              
-            });
-            alert("Добавили новую цель");
-            setAim("");
-            // ClearInput();
-            Load();
-        } catch(error){
-            alert(error);
-        }
-    }
+
+
+
+    // async function AddNewAim (event) {
+    //     event.preventDefault();
+    //     try {
+    //         await axios.post(UrlAims,{
+    //             title: aim.title,
+    //             price: aim.price,
+    //             date: aim.date,
+    //             picture: aim.picture,
+    //             waySaving: aim.waySaving,
+    //             user: {
+    //                 id: aim.user.id,
+    //                 name: aim.user.name
+    //             }              
+    //         });
+    //         alert("Добавили новую цель");
+    //         setAim("");
+    //         // ClearInput();
+    //         Load();
+    //     } catch(error){
+    //         alert(error);
+    //     }
+    // }
 
     
     return (
@@ -89,7 +100,8 @@ const Aims =()=> {
                 <label  class="form-label">Кто будет копить?</label>
                 <select class="form-select" aria-label="Default select example" placeholder="Хотелка">
                     <option defaultValue selecte disabled>Пользователь</option>
-                    {userList.map((user) => <option value={user.id} key={user.id} onClick={setUser(user)}>{user.name}</option>) }
+                    {/* {userList.map((user) => <option value={user.id} key={user.id} onClick={setUser(user)}>{user.name}</option>) } */}
+                    {userList.map((user) => <option value={user.id} key={user.id} >{user.name}</option>) }
                 </select>
             </div>
             
@@ -142,7 +154,7 @@ const Aims =()=> {
                 onChange={event =>setAim({...aim, waySaving: event.target.value})}/>
             </div>
             <div class="container">
-                <button type="submit" class="btn btn-info" onClick={AddNewAim}>Добавить цель</button>
+                {/* <button type="submit" class="btn btn-info" onClick={AddNewAim}>Добавить цель</button> */}
             </div>
         </Fragment>
 
