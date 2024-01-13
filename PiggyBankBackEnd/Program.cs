@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
+using NLog.Web;
 using PiggyBankBackEnd.Context;
+
 
 var nameCors = "PiggyBank3000";
 
@@ -22,14 +24,23 @@ builder.Services.AddDbContext<ApplicationDbContext>(options => {
 builder.Services.AddControllers();
 builder.Services.AddControllersWithViews().AddNewtonsoftJson(options => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
-//Config DB
+builder.Services.AddSwaggerGen(); 
+
+builder.Host.ConfigureLogging(logging =>
+{
+    logging.ClearProviders();
+    logging.SetMinimumLevel(LogLevel.Trace);
+}).UseNLog();
+
+
 
 var app = builder.Build();
 var configuration = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build();
-// Configure the HTTP request pipeline.
+
+
 if (app.Environment.IsDevelopment())
 {
+    
     app.UseSwagger();
     app.UseSwaggerUI();
 }
@@ -41,4 +52,26 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-app.Run();
+
+//Create logger for writing log files
+var logger = NLogBuilder.ConfigureNLog("NLog.config").GetCurrentClassLogger();
+try
+{
+    logger.Debug("Program initialisation");
+    app.Run();
+
+}
+catch (Exception ex)
+{
+    logger.Error(ex, "Something goes wrong! Closing the program");
+    throw;
+}
+finally
+{
+    NLog.LogManager.Shutdown();
+}
+
+
+
+
+
