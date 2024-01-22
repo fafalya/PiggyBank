@@ -20,6 +20,9 @@ namespace PiggyBankBackEnd.Controllers
         //CRUD-> create-read-update-delete
 
         //create
+        /// <summary>
+        /// Controller for creating user
+        /// </summary>
         [HttpPost]
         public async Task <IActionResult> CreateUser([FromBody] CreateUpdateUserDTO dto)
         {
@@ -28,6 +31,7 @@ namespace PiggyBankBackEnd.Controllers
                 //Id= dto.Id,
                 Name = dto.Name,
                 Aims = dto.Aims,
+                Password = dto.Password,
             };
 
             await _context.Users.AddAsync(newUser);
@@ -38,6 +42,9 @@ namespace PiggyBankBackEnd.Controllers
         }
 
         //read
+        /// <summary>
+        /// Controller for showing all users
+        /// </summary>
         [HttpGet]
         public async Task<ActionResult<IEnumerable<UserEntity>>> GetAllUsers ()
         {
@@ -46,6 +53,9 @@ namespace PiggyBankBackEnd.Controllers
             return Ok(users);
         }
 
+        /// <summary>
+        /// controller for showing user by Id
+        /// </summary>
         [HttpGet]
         [Route("{id}")]
         public async Task<ActionResult<UserEntity>> GetUserById([FromRoute] long id )
@@ -59,6 +69,9 @@ namespace PiggyBankBackEnd.Controllers
         }
 
         //update
+        /// <summary>
+        /// Controller for updating user by id
+        /// </summary>
         [HttpPut]
         [Route("{id}")]
         public async Task<IActionResult> UpdateUser([FromRoute] long id, [FromBody] CreateUpdateUserDTO dto)
@@ -78,6 +91,9 @@ namespace PiggyBankBackEnd.Controllers
         }
 
         //delete
+        /// <summary>
+        /// Controller for deleting user by Id
+        /// </summary>
         [HttpDelete]
         [Route("{id}")]
         public async Task<IActionResult> DeleteUser([FromRoute] long id)

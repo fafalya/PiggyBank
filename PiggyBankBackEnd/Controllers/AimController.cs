@@ -21,6 +21,9 @@ namespace PiggyBankBackEnd.Controllers
         //CRUD-> create-read-update-delete
 
         //create
+        /// <summary>
+        /// Controller for creating Aim
+        /// </summary>
         [HttpPost]
         public async Task<IActionResult> CreateAim([FromBody] CreateUpdateAimDTO dto)
         {
@@ -43,6 +46,10 @@ namespace PiggyBankBackEnd.Controllers
         }
 
         //read
+        /// <summary>
+        /// Controller for showing all aims
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public async Task<ActionResult<IEnumerable<AimEntity>>> GetAllAims()
         {
@@ -51,6 +58,9 @@ namespace PiggyBankBackEnd.Controllers
             return Ok(aims);
         }
 
+        /// <summary>
+        /// Controller for showing aim by Id
+        /// </summary>
         [HttpGet]
         [Route("{id}")]
         public async Task<ActionResult<AimEntity>> GetAimById([FromRoute] long id)
@@ -66,6 +76,9 @@ namespace PiggyBankBackEnd.Controllers
         }
 
         //update
+        /// <summary>
+        /// Controller for updating aim by Id
+        /// </summary>
         [HttpPut]
         [Route("{id}")]
         public async Task<IActionResult> UpdateAim([FromRoute] long id, [FromBody] CreateUpdateAimDTO dto)
@@ -92,6 +105,9 @@ namespace PiggyBankBackEnd.Controllers
         }
 
         //delete
+        /// <summary>
+        /// Controller for deleting aim by Id
+        /// </summary>
         [HttpDelete]
         [Route("{id}")]
         public async Task<IActionResult> DeleteAim([FromRoute] long id)

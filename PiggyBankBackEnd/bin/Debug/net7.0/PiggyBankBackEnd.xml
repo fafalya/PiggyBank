@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PiggyBankBackEnd</name>
+    </assembly>
+    <members>
+        <member name="M:PiggyBankBackEnd.Controllers.AimController.CreateAim(PiggyBankBackEnd.DTOs.CreateUpdateAimDTO)">
+            <summary>
+            Controller for creating Aim
+            </summary>
+        </member>
+        <member name="M:PiggyBankBackEnd.Controllers.AimController.GetAllAims">
+            <summary>
+            Controller for showing all aims
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PiggyBankBackEnd.Controllers.AimController.GetAimById(System.Int64)">
+            <summary>
+            Controller for showing aim by Id
+            </summary>
+        </member>
+        <member name="M:PiggyBankBackEnd.Controllers.AimController.UpdateAim(System.Int64,PiggyBankBackEnd.DTOs.CreateUpdateAimDTO)">
+            <summary>
+            Controller for updating aim by Id
+            </summary>
+        </member>
+        <member name="M:PiggyBankBackEnd.Controllers.AimController.DeleteAim(System.Int64)">
+            <summary>
+            Controller for deleting aim by Id
+            </summary>
+        </member>
+        <member name="M:PiggyBankBackEnd.Controllers.AuthenticationController.AuthUser(PiggyBankBackEnd.Entities.UserEntity)">
+            <summary>
+            Controller for authentication
+            </summary>>
+        </member>
+        <member name="M:PiggyBankBackEnd.Controllers.AuthenticationController.GetIdentity(PiggyBankBackEnd.Entities.UserEntity)">
+            <summary>
+            Identification of user
+            </summary>
+        </member>
+        <member name="M:PiggyBankBackEnd.Controllers.UserController.CreateUser(PiggyBankBackEnd.DTOs.CreateUpdateUserDTO)">
+            <summary>
+            Controller for creating user
+            </summary>
+        </member>
+        <member name="M:PiggyBankBackEnd.Controllers.UserController.GetAllUsers">
+            <summary>
+            Controller for showing all users
+            </summary>
+        </member>
+        <member name="M:PiggyBankBackEnd.Controllers.UserController.GetUserById(System.Int64)">
+            <summary>
+            controller for showing user by Id
+            </summary>
+        </member>
+        <member name="M:PiggyBankBackEnd.Controllers.UserController.UpdateUser(System.Int64,PiggyBankBackEnd.DTOs.CreateUpdateUserDTO)">
+            <summary>
+            Controller for updating user by id
+            </summary>
+        </member>
+        <member name="M:PiggyBankBackEnd.Controllers.UserController.DeleteUser(System.Int64)">
+            <summary>
+            Controller for deleting user by Id
+            </summary>
+        </member>
+        <member name="T:PiggyBankBackEnd.Migrations.initial">
+            <inheritdoc />
+        </member>
+        <member name="M:PiggyBankBackEnd.Migrations.initial.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:PiggyBankBackEnd.Migrations.initial.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:PiggyBankBackEnd.Migrations.initial.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:PiggyBankBackEnd.Migrations.AddFieldPasswordForUserEntity">
+            <inheritdoc />
+        </member>
+        <member name="M:PiggyBankBackEnd.Migrations.AddFieldPasswordForUserEntity.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:PiggyBankBackEnd.Migrations.AddFieldPasswordForUserEntity.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:PiggyBankBackEnd.Migrations.AddFieldPasswordForUserEntity.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PiggyBankBackEnd")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+244f32d7ba926dd2c74677325476043e3461525b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3c55ac6a1c4b8897555a7d422810af1cd7248dfd")]
 [assembly: System.Reflection.AssemblyProductAttribute("PiggyBankBackEnd")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PiggyBankBackEnd")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
