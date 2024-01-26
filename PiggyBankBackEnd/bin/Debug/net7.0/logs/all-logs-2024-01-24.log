@@ -1,0 +1,227 @@
+2024-01-24 20:58:34.7965|Program|DEBUG|Program initialisation | 
+2024-01-24 20:58:34.7965|Microsoft.Extensions.Hosting.Internal.Host|DEBUG|Hosting starting | 
+2024-01-24 20:58:34.8226|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|INFO|User profile is available. Using 'C:\Users\Yulia\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest. | 
+2024-01-24 20:58:34.8226|Microsoft.AspNetCore.DataProtection.Repositories.FileSystemXmlRepository|DEBUG|Reading data from file 'C:\Users\Yulia\AppData\Local\ASP.NET\DataProtection-Keys\key-03f48be6-6eba-4f09-a62b-0dac1b4d7346.xml'. | 
+2024-01-24 20:58:34.8313|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|DEBUG|Found key {03f48be6-6eba-4f09-a62b-0dac1b4d7346}. | 
+2024-01-24 20:58:34.8313|Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver|DEBUG|Considering key {03f48be6-6eba-4f09-a62b-0dac1b4d7346} with expiration date 2024-04-06 09:25:04Z as default key. | 
+2024-01-24 20:58:34.8430|Microsoft.AspNetCore.DataProtection.TypeForwardingActivator|DEBUG|Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=7.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60 | 
+2024-01-24 20:58:34.8430|Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor|DEBUG|Decrypting secret element using Windows DPAPI. | 
+2024-01-24 20:58:34.8430|Microsoft.AspNetCore.DataProtection.TypeForwardingActivator|DEBUG|Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=7.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60 | 
+2024-01-24 20:58:34.8430|Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngCbcAuthenticatedEncryptorFactory|DEBUG|Opening CNG algorithm 'AES' from provider '(null)' with chaining mode CBC. | 
+2024-01-24 20:58:34.8430|Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngCbcAuthenticatedEncryptorFactory|DEBUG|Opening CNG algorithm 'SHA256' from provider '(null)' with HMAC. | 
+2024-01-24 20:58:34.8430|Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider|DEBUG|Using key {03f48be6-6eba-4f09-a62b-0dac1b4d7346} as the default key. | 
+2024-01-24 20:58:34.8430|Microsoft.AspNetCore.DataProtection.Internal.DataProtectionHostedService|DEBUG|Key ring with default key {03f48be6-6eba-4f09-a62b-0dac1b4d7346} was loaded during application startup. | 
+2024-01-24 20:58:34.9606|Microsoft.Hosting.Lifetime|INFO|Now listening on: http://localhost:5000 | 
+2024-01-24 20:58:34.9652|Microsoft.AspNetCore.Hosting.Diagnostics|DEBUG|Loaded hosting startup assembly PiggyBankBackEnd | 
+2024-01-24 20:58:34.9652|Microsoft.AspNetCore.Hosting.Diagnostics|DEBUG|Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh | 
+2024-01-24 20:58:34.9652|Microsoft.AspNetCore.Hosting.Diagnostics|DEBUG|Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net | 
+2024-01-24 20:58:34.9652|Microsoft.Hosting.Lifetime|INFO|Application started. Press Ctrl+C to shut down. | 
+2024-01-24 20:58:34.9652|Microsoft.Hosting.Lifetime|INFO|Hosting environment: Development | 
+2024-01-24 20:58:34.9652|Microsoft.Hosting.Lifetime|INFO|Content root path: F:\Yulya\repos\PiggyBank\PiggyBankBackEnd | 
+2024-01-24 20:58:34.9652|Microsoft.Extensions.Hosting.Internal.Host|DEBUG|Hosting started | 
+2024-01-24 20:58:35.1028|Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets|DEBUG|Connection id "0HN0SVMPV372A" reset. | 
+2024-01-24 20:58:35.1028|Microsoft.AspNetCore.Server.Kestrel.Connections|DEBUG|Connection id "0HN0SVMPV372A" accepted. | 
+2024-01-24 20:58:35.1028|Microsoft.AspNetCore.Server.Kestrel.Connections|DEBUG|Connection id "0HN0SVMPV372A" started. | 
+2024-01-24 20:58:35.1141|Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets|DEBUG|Connection id "0HN0SVMPV372A" sending FIN because: "The Socket transport's send loop completed gracefully." | 
+2024-01-24 20:58:35.1141|Microsoft.AspNetCore.Server.Kestrel.Connections|DEBUG|Connection id "0HN0SVMPV372A" disconnecting. | 
+2024-01-24 20:58:35.1141|Microsoft.AspNetCore.Server.Kestrel.Connections|DEBUG|Connection id "0HN0SVMPV372A" stopped. | 
+2024-01-24 20:58:35.2130|Microsoft.AspNetCore.Server.Kestrel.Connections|DEBUG|Connection id "0HN0SVMPV372B" accepted. | 
+2024-01-24 20:58:35.2130|Microsoft.AspNetCore.Server.Kestrel.Connections|DEBUG|Connection id "0HN0SVMPV372B" started. | 
+2024-01-24 20:58:35.2130|Microsoft.AspNetCore.Server.Kestrel.Connections|DEBUG|Connection id "0HN0SVMPV372C" accepted. | 
+2024-01-24 20:58:35.2130|Microsoft.AspNetCore.Server.Kestrel.Connections|DEBUG|Connection id "0HN0SVMPV372C" started. | 
+2024-01-24 20:58:35.2626|Microsoft.AspNetCore.Hosting.Diagnostics|INFO|Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html - - | 
+2024-01-24 20:58:35.3439|Microsoft.AspNetCore.HostFiltering.HostFilteringMiddleware|DEBUG|Wildcard detected, all requests with hosts will be allowed. | 
+2024-01-24 20:58:35.3439|Microsoft.AspNetCore.HostFiltering.HostFilteringMiddleware|TRACE|All hosts are allowed. | 
+2024-01-24 20:58:35.3602|Microsoft.AspNetCore.Routing.Matching.DfaMatcher|DEBUG|No candidates found for the request path '/swagger/index.html' | 
+2024-01-24 20:58:35.3602|Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware|DEBUG|Request did not match any endpoints | 
+2024-01-24 20:58:35.4325|Microsoft.AspNetCore.Watch.BrowserRefresh.BrowserRefreshMiddleware|DEBUG|Response markup is scheduled to include browser refresh script injection. | 
+2024-01-24 20:58:35.4452|Microsoft.AspNetCore.Watch.BrowserRefresh.BrowserRefreshMiddleware|DEBUG|Response markup was updated to include browser refresh script injection. | 
+2024-01-24 20:58:35.4452|Microsoft.AspNetCore.Server.Kestrel.Connections|DEBUG|Connection id "0HN0SVMPV372B" completed keep alive response. | 
+2024-01-24 20:58:35.4452|Microsoft.AspNetCore.Hosting.Diagnostics|INFO|Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html - - - 200 - text/html;charset=utf-8 185.9163ms | 
+2024-01-24 20:58:35.4638|Microsoft.AspNetCore.Hosting.Diagnostics|INFO|Request starting HTTP/1.1 GET http://localhost:5000/_framework/aspnetcore-browser-refresh.js - - | 
+2024-01-24 20:58:35.4638|Microsoft.AspNetCore.Server.Kestrel.Connections|DEBUG|Connection id "0HN0SVMPV372B" completed keep alive response. | 
+2024-01-24 20:58:35.4638|Microsoft.AspNetCore.Hosting.Diagnostics|INFO|Request finished HTTP/1.1 GET http://localhost:5000/_framework/aspnetcore-browser-refresh.js - - - 200 13768 application/javascript;+charset=utf-8 1.7903ms | 
+2024-01-24 20:58:35.4814|Microsoft.AspNetCore.Hosting.Diagnostics|INFO|Request starting HTTP/1.1 GET http://localhost:5000/_vs/browserLink - - | 
+2024-01-24 20:58:35.5078|Microsoft.AspNetCore.Server.Kestrel.Connections|DEBUG|Connection id "0HN0SVMPV372B" completed keep alive response. | 
+2024-01-24 20:58:35.5078|Microsoft.AspNetCore.Hosting.Diagnostics|INFO|Request finished HTTP/1.1 GET http://localhost:5000/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 26.5678ms | 
+2024-01-24 20:58:35.5797|Microsoft.AspNetCore.Hosting.Diagnostics|INFO|Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json - - | 
+2024-01-24 20:58:35.5797|Microsoft.AspNetCore.HostFiltering.HostFilteringMiddleware|TRACE|All hosts are allowed. | 
+2024-01-24 20:58:35.5797|Microsoft.AspNetCore.Routing.Matching.DfaMatcher|DEBUG|No candidates found for the request path '/swagger/v1/swagger.json' | 
+2024-01-24 20:58:35.5797|Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware|DEBUG|Request did not match any endpoints | 
+2024-01-24 20:58:35.6600|Microsoft.AspNetCore.Server.Kestrel.Connections|DEBUG|Connection id "0HN0SVMPV372B" completed keep alive response. | 
+2024-01-24 20:58:35.6600|Microsoft.AspNetCore.Hosting.Diagnostics|INFO|Request finished HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 80.4636ms | 
+2024-01-24 20:58:56.3049|Microsoft.AspNetCore.Hosting.Diagnostics|INFO|Request starting HTTP/1.1 POST http://localhost:5000/api/Authentication application/json-patch+json 49 | 
+2024-01-24 20:58:56.3049|Microsoft.AspNetCore.HostFiltering.HostFilteringMiddleware|TRACE|All hosts are allowed. | 
+2024-01-24 20:58:56.3049|Microsoft.AspNetCore.Routing.Matching.DfaMatcher|DEBUG|1 candidate(s) found for the request path '/api/Authentication' | 
+2024-01-24 20:58:56.3049|Microsoft.AspNetCore.Routing.Matching.DfaMatcher|DEBUG|Endpoint 'PiggyBankBackEnd.Controllers.AuthenticationController.AuthUser (PiggyBankBackEnd)' with route pattern 'api/Authentication' is valid for the request path '/api/Authentication' | 
+2024-01-24 20:58:56.3049|Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware|DEBUG|Request matched endpoint 'PiggyBankBackEnd.Controllers.AuthenticationController.AuthUser (PiggyBankBackEnd)' | 
+2024-01-24 20:58:56.3125|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|DEBUG|Static files was skipped as the request already matched an endpoint. | 
+2024-01-24 20:58:56.3125|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|DEBUG|The request has an origin header: 'http://localhost:5000'. | 
+2024-01-24 20:58:56.3125|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|INFO|CORS policy execution failed. | 
+2024-01-24 20:58:56.3125|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|INFO|Request origin http://localhost:5000 does not have permission to access the resource. | 
+2024-01-24 20:58:56.3125|Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware|WARN|Failed to determine the https port for redirect. | 
+2024-01-24 20:58:56.3634|Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler|DEBUG|AuthenticationScheme: Bearer was not authenticated. | 
+2024-01-24 20:58:56.3634|Microsoft.AspNetCore.Routing.EndpointMiddleware|INFO|Executing endpoint 'PiggyBankBackEnd.Controllers.AuthenticationController.AuthUser (PiggyBankBackEnd)' | 
+2024-01-24 20:58:56.3825|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INFO|Route matched with {action = "AuthUser", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[PiggyBankBackEnd.Entities.UserEntity]] AuthUser(PiggyBankBackEnd.DTOs.AuthenticationDTO) on controller PiggyBankBackEnd.Controllers.AuthenticationController (PiggyBankBackEnd). | 
+2024-01-24 20:58:56.3825|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|DEBUG|Execution plan of authorization filters (in the following order): None | 
+2024-01-24 20:58:56.3825|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|DEBUG|Execution plan of resource filters (in the following order): Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter | 
+2024-01-24 20:58:56.3825|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|DEBUG|Execution plan of action filters (in the following order): Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000), Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000) | 
+2024-01-24 20:58:56.3825|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|DEBUG|Execution plan of exception filters (in the following order): None | 
+2024-01-24 20:58:56.3825|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|DEBUG|Execution plan of result filters (in the following order): Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter, Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000) | 
+2024-01-24 20:58:56.3825|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|TRACE|Resource Filter: Before executing OnResourceExecuting on filter Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter. | 
+2024-01-24 20:58:56.3825|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|TRACE|Resource Filter: After executing OnResourceExecuting on filter Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter. | 
+2024-01-24 20:58:56.3825|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|DEBUG|Executing controller factory for controller PiggyBankBackEnd.Controllers.AuthenticationController (PiggyBankBackEnd) | 
+2024-01-24 20:58:56.4621|Microsoft.EntityFrameworkCore.Infrastructure|DEBUG|An 'IServiceProvider' was created for internal use by Entity Framework. | 
+2024-01-24 20:58:56.8134|Microsoft.EntityFrameworkCore.Infrastructure|DEBUG|Entity Framework Core 7.0.10 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:7.0.10' with options: None | 
+2024-01-24 20:58:56.8283|Microsoft.EntityFrameworkCore.Database.Connection|DEBUG|Creating DbConnection. | 
+2024-01-24 20:58:56.8578|Microsoft.EntityFrameworkCore.Database.Connection|DEBUG|Created DbConnection. (27ms). | 
+2024-01-24 20:58:56.8605|Microsoft.EntityFrameworkCore.Database.Connection|DEBUG|Opening connection to database 'PiggyBank' on server '(localdb)\MSSQLLocalDB'. | 
+2024-01-24 20:58:57.0421|Microsoft.EntityFrameworkCore.Database.Connection|DEBUG|Opened connection to database 'PiggyBank' on server '(localdb)\MSSQLLocalDB'. | 
+2024-01-24 20:58:57.0421|Microsoft.EntityFrameworkCore.Database.Command|DEBUG|Creating DbCommand for 'ExecuteNonQuery'. | 
+2024-01-24 20:58:57.0489|Microsoft.EntityFrameworkCore.Database.Command|DEBUG|Created DbCommand for 'ExecuteNonQuery' (2ms). | 
+2024-01-24 20:58:57.0489|Microsoft.EntityFrameworkCore.Database.Command|DEBUG|Initialized DbCommand for 'ExecuteNonQuery' (5ms). | 
+2024-01-24 20:58:57.0489|Microsoft.EntityFrameworkCore.Database.Command|DEBUG|Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1 | 
+2024-01-24 20:58:57.0669|Microsoft.EntityFrameworkCore.Database.Command|INFO|Executed DbCommand (14ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1 | 
+2024-01-24 20:58:57.0669|Microsoft.EntityFrameworkCore.Database.Connection|DEBUG|Closing connection to database 'PiggyBank' on server '(localdb)\MSSQLLocalDB'. | 
+2024-01-24 20:58:57.0669|Microsoft.EntityFrameworkCore.Database.Connection|DEBUG|Closed connection to database 'PiggyBank' on server '(localdb)\MSSQLLocalDB' (2ms). | 
+2024-01-24 20:58:57.0669|Microsoft.EntityFrameworkCore.Database.Command|DEBUG|Creating DbCommand for 'ExecuteScalar'. | 
+2024-01-24 20:58:57.0669|Microsoft.EntityFrameworkCore.Database.Command|DEBUG|Created DbCommand for 'ExecuteScalar' (0ms). | 
+2024-01-24 20:58:57.0669|Microsoft.EntityFrameworkCore.Database.Command|DEBUG|Initialized DbCommand for 'ExecuteScalar' (0ms). | 
+2024-01-24 20:58:57.0669|Microsoft.EntityFrameworkCore.Database.Connection|DEBUG|Opening connection to database 'PiggyBank' on server '(localdb)\MSSQLLocalDB'. | 
+2024-01-24 20:58:57.0669|Microsoft.EntityFrameworkCore.Database.Connection|DEBUG|Opened connection to database 'PiggyBank' on server '(localdb)\MSSQLLocalDB'. | 
+2024-01-24 20:58:57.0669|Microsoft.EntityFrameworkCore.Database.Command|DEBUG|Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0 | 
+2024-01-24 20:58:57.0915|Microsoft.EntityFrameworkCore.Database.Command|INFO|Executed DbCommand (17ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0 | 
+2024-01-24 20:58:57.0915|Microsoft.EntityFrameworkCore.Database.Connection|DEBUG|Closing connection to database 'PiggyBank' on server '(localdb)\MSSQLLocalDB'. | 
+2024-01-24 20:58:57.0915|Microsoft.EntityFrameworkCore.Database.Connection|DEBUG|Closed connection to database 'PiggyBank' on server '(localdb)\MSSQLLocalDB' (0ms). | 
+2024-01-24 20:58:57.0915|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|DEBUG|Executed controller factory for controller PiggyBankBackEnd.Controllers.AuthenticationController (PiggyBankBackEnd) | 
+2024-01-24 20:58:57.0915|Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder|DEBUG|Attempting to bind parameter 'user' of type 'PiggyBankBackEnd.DTOs.AuthenticationDTO' ... | 
+2024-01-24 20:58:57.0915|Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinder|DEBUG|Attempting to bind parameter 'user' of type 'PiggyBankBackEnd.DTOs.AuthenticationDTO' using the name '' in request data ... | 
+2024-01-24 20:58:57.0915|Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinder|DEBUG|Rejected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonPatchInputFormatter' for content type 'application/json-patch+json'. | 
+2024-01-24 20:58:57.0915|Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinder|DEBUG|Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonInputFormatter' for content type 'application/json-patch+json'. | 
+2024-01-24 20:58:57.0915|Microsoft.AspNetCore.Server.Kestrel|DEBUG|Connection id "0HN0SVMPV372B", Request id "0HN0SVMPV372B:00000005": started reading request body. | 
+2024-01-24 20:58:57.0915|Microsoft.AspNetCore.Server.Kestrel|DEBUG|Connection id "0HN0SVMPV372B", Request id "0HN0SVMPV372B:00000005": done reading request body. | 
+2024-01-24 20:58:57.1476|Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinder|DEBUG|Done attempting to bind parameter 'user' of type 'PiggyBankBackEnd.DTOs.AuthenticationDTO'. | 
+2024-01-24 20:58:57.1476|Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder|DEBUG|Done attempting to bind parameter 'user' of type 'PiggyBankBackEnd.DTOs.AuthenticationDTO'. | 
+2024-01-24 20:58:57.1476|Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder|DEBUG|Attempting to validate the bound parameter 'user' of type 'PiggyBankBackEnd.DTOs.AuthenticationDTO' ... | 
+2024-01-24 20:58:57.1534|Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder|DEBUG|Done attempting to validate the bound parameter 'user' of type 'PiggyBankBackEnd.DTOs.AuthenticationDTO'. | 
+2024-01-24 20:58:57.1534|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|TRACE|Action Filter: Before executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter. | 
+2024-01-24 20:58:57.1534|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|TRACE|Action Filter: After executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter. | 
+2024-01-24 20:58:57.1534|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|TRACE|Action Filter: Before executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter. | 
+2024-01-24 20:58:57.1534|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|TRACE|Action Filter: After executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter. | 
+2024-01-24 20:58:57.1534|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INFO|Executing action method PiggyBankBackEnd.Controllers.AuthenticationController.AuthUser (PiggyBankBackEnd) - Validation state: Valid | 
+2024-01-24 20:58:57.1534|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|TRACE|Executing action method PiggyBankBackEnd.Controllers.AuthenticationController.AuthUser (PiggyBankBackEnd) with arguments (PiggyBankBackEnd.DTOs.AuthenticationDTO) | 
+2024-01-24 20:58:57.1908|Microsoft.EntityFrameworkCore.Query|DEBUG|Compiling query expression: 
+'DbSet<UserEntity>()
+    .FirstOrDefault(u => u.Name == __user_Name_0)' | 
+2024-01-24 20:58:57.2936|Microsoft.EntityFrameworkCore.Query|DEBUG|Generated query execution expression: 
+'queryContext => new SingleQueryingEnumerable<UserEntity>(
+    (RelationalQueryContext)queryContext, 
+    RelationalCommandCache.QueryExpression(
+        Projection Mapping:
+            EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: UserEntity.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: UserEntity.Name (string) Required, 1], [Property: UserEntity.Password (string) Required, 2] }
+        SELECT TOP(1) u.Id, u.Name, u.Password
+        FROM Users AS u
+        WHERE u.Name == @__user_Name_0), 
+    null, 
+    Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, UserEntity>, 
+    PiggyBankBackEnd.Context.ApplicationDbContext, 
+    False, 
+    False, 
+    True
+)
+    .SingleOrDefault()' | 
+2024-01-24 20:58:57.2936|Microsoft.EntityFrameworkCore.Database.Command|DEBUG|Creating DbCommand for 'ExecuteReader'. | 
+2024-01-24 20:58:57.2936|Microsoft.EntityFrameworkCore.Database.Command|DEBUG|Created DbCommand for 'ExecuteReader' (0ms). | 
+2024-01-24 20:58:57.2936|Microsoft.EntityFrameworkCore.Database.Command|DEBUG|Initialized DbCommand for 'ExecuteReader' (1ms). | 
+2024-01-24 20:58:57.2936|Microsoft.EntityFrameworkCore.Database.Connection|DEBUG|Opening connection to database 'PiggyBank' on server '(localdb)\MSSQLLocalDB'. | 
+2024-01-24 20:58:57.2936|Microsoft.EntityFrameworkCore.Database.Connection|DEBUG|Opened connection to database 'PiggyBank' on server '(localdb)\MSSQLLocalDB'. | 
+2024-01-24 20:58:57.3133|Microsoft.EntityFrameworkCore.Database.Command|DEBUG|Executing DbCommand [Parameters=[@__user_Name_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Name], [u].[Password]
+FROM [Users] AS [u]
+WHERE [u].[Name] = @__user_Name_0 | 
+2024-01-24 20:58:57.3294|Microsoft.EntityFrameworkCore.Database.Command|INFO|Executed DbCommand (17ms) [Parameters=[@__user_Name_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Name], [u].[Password]
+FROM [Users] AS [u]
+WHERE [u].[Name] = @__user_Name_0 | 
+2024-01-24 20:58:57.3487|Microsoft.EntityFrameworkCore.ChangeTracking|DEBUG|Context 'ApplicationDbContext' started tracking 'UserEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values. | 
+2024-01-24 20:58:57.3487|Microsoft.EntityFrameworkCore.Database.Command|DEBUG|Closing data reader to 'PiggyBank' on server '(localdb)\MSSQLLocalDB'. | 
+2024-01-24 20:58:57.3487|Microsoft.EntityFrameworkCore.Database.Command|DEBUG|A data reader for 'PiggyBank' on server '(localdb)\MSSQLLocalDB' is being disposed after spending 28ms reading results. | 
+2024-01-24 20:58:57.3487|Microsoft.EntityFrameworkCore.Database.Connection|DEBUG|Closing connection to database 'PiggyBank' on server '(localdb)\MSSQLLocalDB'. | 
+2024-01-24 20:58:57.3487|Microsoft.EntityFrameworkCore.Database.Connection|DEBUG|Closed connection to database 'PiggyBank' on server '(localdb)\MSSQLLocalDB' (0ms). | 
+2024-01-24 20:58:57.5096|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|TRACE|Action Filter: Before executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter. | 
+2024-01-24 20:58:57.5096|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|TRACE|Action Filter: After executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter. | 
+2024-01-24 20:58:57.5096|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|TRACE|Action Filter: Before executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter. | 
+2024-01-24 20:58:57.5096|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|TRACE|Action Filter: After executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter. | 
+2024-01-24 20:58:57.5096|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|TRACE|Resource Filter: Before executing OnResourceExecuted on filter Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter. | 
+2024-01-24 20:58:57.5096|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|TRACE|Resource Filter: After executing OnResourceExecuted on filter Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter. | 
+2024-01-24 20:58:57.5127|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|INFO|Executed action PiggyBankBackEnd.Controllers.AuthenticationController.AuthUser (PiggyBankBackEnd) in 1127.4644ms | 
+2024-01-24 20:58:57.5127|Microsoft.AspNetCore.Routing.EndpointMiddleware|INFO|Executed endpoint 'PiggyBankBackEnd.Controllers.AuthenticationController.AuthUser (PiggyBankBackEnd)' | 
+2024-01-24 20:58:57.5127|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|ERROR|An unhandled exception has occurred while executing the request. | System.ArgumentOutOfRangeException: IDX10720: Unable to create KeyedHashAlgorithm for algorithm 'HS256', the key size must be greater than: '256' bits, key has '232' bits. See https://aka.ms/IdentityModel/UnsafeRelaxHmacKeySizeValidation (Parameter 'keyBytes')
+   at Microsoft.IdentityModel.Tokens.CryptoProviderFactory.ValidateKeySize(Byte[] keyBytes, String algorithm, Int32 expectedNumberOfBytes)
+   at Microsoft.IdentityModel.Tokens.CryptoProviderFactory.CreateKeyedHashAlgorithm(Byte[] keyBytes, String algorithm)
+   at Microsoft.IdentityModel.Tokens.SymmetricSignatureProvider.CreateKeyedHashAlgorithm()
+   at Microsoft.IdentityModel.Tokens.DisposableObjectPool`1.CreateInstance()
+   at Microsoft.IdentityModel.Tokens.DisposableObjectPool`1.Allocate()
+   at Microsoft.IdentityModel.Tokens.SymmetricSignatureProvider.GetKeyedHashAlgorithm(Byte[] keyBytes, String algorithm)
+   at Microsoft.IdentityModel.Tokens.SymmetricSignatureProvider.Sign(Byte[] input)
+   at Microsoft.IdentityModel.JsonWebTokens.JwtTokenUtilities.CreateEncodedSignature(String input, SigningCredentials signingCredentials)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.WriteToken(SecurityToken token)
+   at PiggyBankBackEnd.Controllers.AuthenticationController.AuthUser(AuthenticationDTO user) in F:\Yulya\repos\PiggyBank\PiggyBankBackEnd\Controllers\AuthenticationController.cs:line 45
+   at lambda_method6(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-01-24 20:58:57.5127|Microsoft.AspNetCore.Server.Kestrel.Connections|DEBUG|Connection id "0HN0SVMPV372B" completed keep alive response. | 
+2024-01-24 20:58:57.5127|Microsoft.EntityFrameworkCore.Infrastructure|DEBUG|'ApplicationDbContext' disposed. | 
+2024-01-24 20:58:57.5284|Microsoft.EntityFrameworkCore.Database.Connection|DEBUG|Disposing connection to database 'PiggyBank' on server '(localdb)\MSSQLLocalDB'. | 
+2024-01-24 20:58:57.5284|Microsoft.EntityFrameworkCore.Database.Connection|DEBUG|Disposed connection to database '' on server '' (1ms). | 
+2024-01-24 20:58:57.5284|Microsoft.AspNetCore.Hosting.Diagnostics|INFO|Request finished HTTP/1.1 POST http://localhost:5000/api/Authentication application/json-patch+json 49 - 500 - text/plain;+charset=utf-8 1225.0441ms | 

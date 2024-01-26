@@ -1,11 +1,39 @@
 {
   "Version": 1,
-  "Hash": "3mfHH6CEUMvtpPjP5wgy8kMooRyzMXGsUGfXRmiejFQ=",
+  "Hash": "43QbyRvD+XOQapY+ev9nIJOTsFLONF+quHBrKvCZFJY=",
   "Source": "PiggyBankBackEnd",
   "BasePath": "_content/PiggyBankBackEnd",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "PiggyBankBackEnd\\wwwroot",
+      "Source": "PiggyBankBackEnd",
+      "ContentRoot": "F:\\Yulya\\repos\\PiggyBank\\PiggyBankBackEnd\\wwwroot\\",
+      "BasePath": "_content/PiggyBankBackEnd",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "F:\\Yulya\\repos\\PiggyBank\\PiggyBankBackEnd\\wwwroot\\images\\26012024 204748palma_vetki_pastel_128581_3840x2160.jpg",
+      "SourceId": "PiggyBankBackEnd",
+      "SourceType": "Discovered",
+      "ContentRoot": "F:\\Yulya\\repos\\PiggyBank\\PiggyBankBackEnd\\wwwroot\\",
+      "BasePath": "_content/PiggyBankBackEnd",
+      "RelativePath": "images/26012024 204748palma_vetki_pastel_128581_3840x2160.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\26012024 204748palma_vetki_pastel_128581_3840x2160.jpg"
+    }
+  ]
 }

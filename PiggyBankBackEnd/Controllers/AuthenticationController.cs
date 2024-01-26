@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using PiggyBankBackEnd.Authentication;
 using PiggyBankBackEnd.Context;
+using PiggyBankBackEnd.DTOs;
 using PiggyBankBackEnd.Entities;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
@@ -25,7 +26,7 @@ namespace PiggyBankBackEnd.Controllers
         /// Controller for authentication
         /// </summary>>
         [HttpPost]
-        public async Task <ActionResult<UserEntity>> AuthUser(UserEntity user)
+        public async Task <ActionResult<UserEntity>> AuthUser([FromBody] AuthenticationDTO user)
         {
             List<Claim> identity;
             try
@@ -56,7 +57,7 @@ namespace PiggyBankBackEnd.Controllers
         /// <summary>
         /// Identification of user
         /// </summary>
-        private List<Claim> GetIdentity(UserEntity user)
+        private List<Claim> GetIdentity( AuthenticationDTO user)
         {
             if (user == null) return null;
             UserEntity person =  _context.Users.FirstOrDefault(u => u.Name == user.Name);
@@ -66,8 +67,8 @@ namespace PiggyBankBackEnd.Controllers
             if (person.Password != cryptedPassword) throw new Exception("Wrong name or password!");
             var claims = new List<Claim>
             {
-                new Claim(nameof(user.Id), $"{user.Id}" ),
-                new Claim(nameof(user.Name), $"{user.Name}")
+                new Claim(nameof(person.Id), $"{person.Id}" ),
+                new Claim(nameof(person.Name), $"{person.Name}")
             };
             return claims;
 

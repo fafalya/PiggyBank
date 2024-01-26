@@ -57,6 +57,28 @@ namespace PiggyBankBackEnd.Migrations
                     b.ToTable("Aims");
                 });
 
+            modelBuilder.Entity("PiggyBankBackEnd.Entities.ImageEntity", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("AimId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ImagePath")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AimId");
+
+                    b.ToTable("Images");
+                });
+
             modelBuilder.Entity("PiggyBankBackEnd.Entities.UserEntity", b =>
                 {
                     b.Property<int>("Id")
@@ -87,6 +109,22 @@ namespace PiggyBankBackEnd.Migrations
                         .IsRequired();
 
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("PiggyBankBackEnd.Entities.ImageEntity", b =>
+                {
+                    b.HasOne("PiggyBankBackEnd.Entities.AimEntity", "Aim")
+                        .WithMany("Images")
+                        .HasForeignKey("AimId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Aim");
+                });
+
+            modelBuilder.Entity("PiggyBankBackEnd.Entities.AimEntity", b =>
+                {
+                    b.Navigation("Images");
                 });
 
             modelBuilder.Entity("PiggyBankBackEnd.Entities.UserEntity", b =>

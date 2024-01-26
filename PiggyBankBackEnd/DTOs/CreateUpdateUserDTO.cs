@@ -1,4 +1,5 @@
 ﻿using PiggyBankBackEnd.Entities;
+using System.Text.Json.Serialization;
 
 namespace PiggyBankBackEnd.DTOs
 {
@@ -7,6 +8,7 @@ namespace PiggyBankBackEnd.DTOs
         //public int Id { get; set; }
         public string Name { get; set; }
         public string Password {  get; set; }
+        [JsonIgnore]
         public ICollection<AimEntity>? Aims { get; set; }
     }
 }

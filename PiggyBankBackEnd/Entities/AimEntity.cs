@@ -10,6 +10,7 @@
         public int WayOfSaving { get; set; }
         public UserEntity User { get; set; }
         public int UserId { get; set; }
+        public ICollection<ImageEntity> Images { get; set; }
 
     }
 }

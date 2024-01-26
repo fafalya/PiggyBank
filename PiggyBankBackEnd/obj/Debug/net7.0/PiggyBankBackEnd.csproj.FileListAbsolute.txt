@@ -500,3 +500,4 @@ F:\Yulya\repos\PiggyBank\PiggyBankBackEnd\bin\Debug\net7.0\NLog.Web.dll
 F:\Yulya\repos\PiggyBank\PiggyBankBackEnd\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 F:\Yulya\repos\PiggyBank\PiggyBankBackEnd\bin\Debug\net7.0\PiggyBankBackEnd.xml
 F:\Yulya\repos\PiggyBank\PiggyBankBackEnd\obj\Debug\net7.0\PiggyBankBackEnd.xml
+F:\Yulya\repos\PiggyBank\PiggyBankBackEnd\bin\Debug\net7.0\PiggyBankBackEnd.staticwebassets.runtime.json

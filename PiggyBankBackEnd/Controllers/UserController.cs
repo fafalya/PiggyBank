@@ -4,6 +4,7 @@ using Microsoft.Identity.Client;
 using PiggyBankBackEnd.Context;
 using PiggyBankBackEnd.DTOs;
 using PiggyBankBackEnd.Entities;
+using System.Text;
 
 namespace PiggyBankBackEnd.Controllers
 {
@@ -26,6 +27,19 @@ namespace PiggyBankBackEnd.Controllers
         [HttpPost]
         public async Task <IActionResult> CreateUser([FromBody] CreateUpdateUserDTO dto)
         {
+            Console.WriteLine("test!!!!!!!!!!!!");
+            UserEntity person = _context.Users.FirstOrDefault(u=> u.Name == dto.Name);
+            if (person != null)
+            {
+                return BadRequest(
+                    new
+                    {
+                        error = "This name is already in use. Please choose another name"
+                    });
+            }
+            byte[] pass = System.Security.Cryptography.MD5.HashData(
+                Encoding.Unicode.GetBytes(dto.Password));
+            dto.Password = Convert.ToBase64String(pass);
             var newUser = new UserEntity()
             {
                 //Id= dto.Id,

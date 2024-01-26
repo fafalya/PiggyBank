@@ -30,14 +30,29 @@
             Controller for deleting aim by Id
             </summary>
         </member>
-        <member name="M:PiggyBankBackEnd.Controllers.AuthenticationController.AuthUser(PiggyBankBackEnd.Entities.UserEntity)">
+        <member name="M:PiggyBankBackEnd.Controllers.AuthenticationController.AuthUser(PiggyBankBackEnd.DTOs.AuthenticationDTO)">
             <summary>
             Controller for authentication
             </summary>>
         </member>
-        <member name="M:PiggyBankBackEnd.Controllers.AuthenticationController.GetIdentity(PiggyBankBackEnd.Entities.UserEntity)">
+        <member name="M:PiggyBankBackEnd.Controllers.AuthenticationController.GetIdentity(PiggyBankBackEnd.DTOs.AuthenticationDTO)">
             <summary>
             Identification of user
+            </summary>
+        </member>
+        <member name="M:PiggyBankBackEnd.Controllers.ImageController.UploadImages(System.Collections.Generic.IEnumerable{Microsoft.AspNetCore.Http.IFormFile})">
+            <summary>
+            Controller for uploading images
+            </summary>
+        </member>
+        <member name="M:PiggyBankBackEnd.Controllers.ImageController.GetAllImages">
+            <summary>
+            Controller for showing images
+            </summary>
+        </member>
+        <member name="M:PiggyBankBackEnd.Controllers.ImageController.DeleteImage(System.Int32)">
+            <summary>
+            Controller for deleting image by Id
             </summary>
         </member>
         <member name="M:PiggyBankBackEnd.Controllers.UserController.CreateUser(PiggyBankBackEnd.DTOs.CreateUpdateUserDTO)">
@@ -87,6 +102,18 @@
             <inheritdoc />
         </member>
         <member name="M:PiggyBankBackEnd.Migrations.AddFieldPasswordForUserEntity.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:PiggyBankBackEnd.Migrations.AddImageEntity">
+            <inheritdoc />
+        </member>
+        <member name="M:PiggyBankBackEnd.Migrations.AddImageEntity.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:PiggyBankBackEnd.Migrations.AddImageEntity.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:PiggyBankBackEnd.Migrations.AddImageEntity.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
     </members>
