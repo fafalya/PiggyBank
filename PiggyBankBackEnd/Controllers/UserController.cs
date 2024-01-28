@@ -27,7 +27,6 @@ namespace PiggyBankBackEnd.Controllers
         [HttpPost]
         public async Task <IActionResult> CreateUser([FromBody] CreateUpdateUserDTO dto)
         {
-            Console.WriteLine("test!!!!!!!!!!!!");
             UserEntity person = _context.Users.FirstOrDefault(u=> u.Name == dto.Name);
             if (person != null)
             {

@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\images\\26012024 204748palma_vetki_pastel_128581_3840x2160.jpg"
     },
     {
+      "Id": "F:\\Yulya\\repos\\PiggyBank\\PiggyBankBackEnd\\wwwroot\\images\\26012024 205429kafe_restoran_stolik_110567_3840x2160.jpg",
+      "PackagePath": "staticwebassets\\images\\26012024 205429kafe_restoran_stolik_110567_3840x2160.jpg"
+    },
+    {
       "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.PiggyBankBackEnd.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },

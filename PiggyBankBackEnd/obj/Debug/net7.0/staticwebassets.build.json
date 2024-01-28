@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "43QbyRvD+XOQapY+ev9nIJOTsFLONF+quHBrKvCZFJY=",
+  "Hash": "ANzwoEsQdPnLxrW4Iw+Cm5d5LDOlmlOWLbQxZv4WjtM=",
   "Source": "PiggyBankBackEnd",
   "BasePath": "_content/PiggyBankBackEnd",
   "Mode": "Default",
@@ -34,6 +34,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\26012024 204748palma_vetki_pastel_128581_3840x2160.jpg"
+    },
+    {
+      "Identity": "F:\\Yulya\\repos\\PiggyBank\\PiggyBankBackEnd\\wwwroot\\images\\26012024 205429kafe_restoran_stolik_110567_3840x2160.jpg",
+      "SourceId": "PiggyBankBackEnd",
+      "SourceType": "Discovered",
+      "ContentRoot": "F:\\Yulya\\repos\\PiggyBank\\PiggyBankBackEnd\\wwwroot\\",
+      "BasePath": "_content/PiggyBankBackEnd",
+      "RelativePath": "images/26012024 205429kafe_restoran_stolik_110567_3840x2160.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\26012024 205429kafe_restoran_stolik_110567_3840x2160.jpg"
     }
   ]
 }

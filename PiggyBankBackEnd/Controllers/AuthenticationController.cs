@@ -33,7 +33,6 @@ namespace PiggyBankBackEnd.Controllers
             {
                 identity = GetIdentity(user);
             } catch (Exception ex) { return BadRequest(ex.Message); }
-
             var now = DateTime.UtcNow;
             var jwt = new JwtSecurityToken(
                 issuer: AuthOptions.ISSUER,
@@ -42,15 +41,13 @@ namespace PiggyBankBackEnd.Controllers
                 claims: identity,
                 expires: now.Add(TimeSpan.FromMinutes(AuthOptions.LIFETIME)),
                 signingCredentials: new SigningCredentials(AuthOptions.GetSymmetricSecurityKey(), SecurityAlgorithms.HmacSha256));
-            var encodedJwt = new JwtSecurityTokenHandler().WriteToken(jwt);
-
+                var encodedJwt = new JwtSecurityTokenHandler().WriteToken(jwt);
             var response = new
             {
                 access_token = encodedJwt,
                 userId = identity[0].Value.ToString(),
                 userName = identity[1].Value.ToString(),
             };
-
             return Ok(response);
         }
 
@@ -67,7 +64,7 @@ namespace PiggyBankBackEnd.Controllers
             if (person.Password != cryptedPassword) throw new Exception("Wrong name or password!");
             var claims = new List<Claim>
             {
-                new Claim(nameof(person.Id), $"{person.Id}" ),
+                new Claim(nameof(person.Id), $"{person.Id}" ),    
                 new Claim(nameof(person.Name), $"{person.Name}")
             };
             return claims;
