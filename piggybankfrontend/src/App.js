@@ -2,7 +2,7 @@
 
 //import Header from "./Navigation/Header";
 import { Route, Routes } from "react-router-dom";
-import NavBar from "./Navigation/NavBar";
+import Header from "./Navigation/Header";
 import Home from "./pages/Home"
 import NotFound from "./pages/NotFound"
 import Aims from "./pages/Aims"
@@ -12,7 +12,7 @@ import Users from "./pages/Users"
 function App() {
   return (
     <div>
-      <NavBar/> 
+      <Header/> 
       {/* <Header/> */}
       {/* <h1>test</h1> */}
         <Routes>

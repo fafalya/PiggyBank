@@ -1,5 +1,8 @@
 import React, { Fragment,useEffect, useState } from 'react';
-import { UrlAims, UrlUsers } from '../urls/urlsList';
+import DatePicker from 'react-datepicker'
+import 'react-datepicker/dist/react-datepicker.css'
+import { UrlAims, UrlUsers, UrlUploadImages } from '../urls/urlsList';
+import ImagesUpload from '../components/ImagesUpload/ImagesUpload';
 import axios from 'axios';
 
 
@@ -10,17 +13,43 @@ const Aims =()=> {
         title: '',
         price: '',
         date: '',
-        picture: '',
         waySaving: '',
-        user: {
-            id: 0,
-            name: ''
-        }
+        // user: {
+        //     id: 0,
+        //     name: ''
+        // },
+        userId: '',
+        imagesId: []
     })
+    
 
     const[aimList,setAimList] = useState([])
     const[userList,setUserList] = useState([])
     const[users,setUser]=useState()
+    const [selectDate, setSelectedDate] = useState(null)
+    const [dataResponseImage, setDataResponseImage] = useState([]);
+    const handleAddUser = (event) => {
+        let event_id = parseInt(event.target.value)
+        const result = userList.find(u => u.id === event_id)
+        setAim({
+            ...aim,
+            // user: [{
+            //     id: result.id,
+            //     name: result.name,
+            //     password: result.password,
+            //     aims: result.aims
+            // }],
+            userId: result.id
+        })
+    }
+    var imagesArray;
+    const handleDataImages = (data) => {
+        console.log('что получила из imagesupload');
+        console.log(data);
+        setDataResponseImage(data);
+        console.log('положилось ли информация куда надо ');
+        console.log(dataResponseImage)
+    }
 
     useEffect(()=>{
         (async ()=> await Load())();
@@ -36,8 +65,6 @@ const Aims =()=> {
         setAimList(resultLoadingAims.data);
         console.log(resultLoadingAims.data);
 
-
-        
         const resultLoadingUsers = await axios.get(UrlUsers); 
         setUserList(resultLoadingUsers.data);
         console.log(resultLoadingUsers.data);
@@ -45,29 +72,106 @@ const Aims =()=> {
 
     
 
-    async function AddNewAim (event) {
-        event.preventDefault();
+    async function AddNewAim () {
+        console.log("ready for uploading images");
         try {
+            console.log("ready for uploading images");
+            console.log(imagesArray);
+            console.log("finish uploading images");
+            setAim({... aim , date:selectDate, imagesId:imagesArray})
+            console.log(aim.imagesId);
             await axios.post(UrlAims,{
                 title: aim.title,
                 price: aim.price,
                 date: aim.date,
-                picture: aim.picture,
                 waySaving: aim.waySaving,
-                user: {
-                    id: aim.user.id,
-                    name: aim.user.name
-                }              
+                // user: {
+                //     id: aim.user.id,
+                //     name: aim.user.name,
+                //     password: aim.user.password,
+                //     aims: aim.user.aims
+                // },
+                userId: aim.userId,
+                imagesId: aim.imagesId              
             });
             alert("Добавили новую цель");
             setAim("");
-            // ClearInput();
+            //ClearInput();
             Load();
         } catch(error){
             alert(error);
         }
     }
 
+    async function postImages()  {
+        const formData = new FormData();
+        for (const data of dataResponseImage) {
+            console.log(data);
+        }
+        for (let i = 0; i < dataResponseImage.length; i++) {
+            formData.append('images', dataResponseImage[i].file);
+        }
+        console.log("смотрим что лежит в формДате");
+        for (const data of formData) {
+            console.log(data);
+        }
+        try {
+            await axios.post(UrlUploadImages, formData)
+                .then((res) => {
+                    //выводим ответ от сервера (массив id изображений)
+                    console.log("выводим ответ от сервера (массив id изображений)");
+                    console.log(res.data);                   
+                    imagesArray = res.data;
+                    console.log("выводи что лежит в ответе (массиве imagesArray1)");
+                    console.log(imagesArray);
+                })
+            console.log('Изображения успешно добавлены11111111');
+        }
+        catch (e) {
+            console.log('Ошибка добавления изображений')
+        }
+    }
+    async function Add(){
+        console.log("теститруем1")
+        await postImages();
+        await AddNewAim();
+        console.log("теститруем2")
+        console.log(aim)
+    }
+    // function postFlower() {
+    //     try {
+    //         var dBcategory = document.getElementById("dropdownButtonCategory")
+    //         var dBcolor = document.getElementById("dropdownButtonColor")
+    //         var dBCountry = document.getElementById("dropdownButonCountry")
+    //         //console.log(dBcategory.dataset.idcategory)
+    //         //console.log(dBcolor.dataset.idcolor)
+    //         //console.log(dBCountry.dataset.idcountry)
+
+    //         var flower = {
+    //             title: inputValueFlower.title,
+    //             price: inputValueFlower.price,
+    //             count: inputValueFlower.count,
+    //             categoryId: dBcategory.dataset.idcategory,
+    //             colorId: dBcolor.dataset.idcolor,
+    //             countryId: dBCountry.dataset.idcountry,
+    //             imagesId: imagesArray
+    //         };
+    //         console.log(flower);
+    //         axios.post(urlFlowers, flower);
+    //     }
+    //     catch (e) {
+    //         alert('Ошибка добавления цветка')
+    //     }
+    //     alert('Цветок успешно добавлен')
+    // }
+
+    function ShowDate(){
+        console.log("test for date start");
+        console.log(selectDate);
+        console.log("test for date end")
+    }
+    
+     
     
     return (
         <Fragment>
@@ -99,11 +203,14 @@ const Aims =()=> {
 
             <div class="container">
                 <label  class="form-label">Кто будет копить?</label>
-                <select class="form-select" aria-label="Default select example" placeholder="Хотелка">
+                <select class="form-select" aria-label="Default select example" placeholder="пользователь" onChange={handleAddUser}>
                     <option defaultValue selecte disabled>Выберите пользователя</option>
-                    {userList.map((user) => <option value={user.id} key={user.id} onClick={()=> {setUser(user)}}>{user.name}</option>) }
+                    {/* {userList.map((u) => <option value={u.id} key={u.id} onClick={()=> {setUser(u)}}>{u.name}</option>) } */}
+                    {userList.map((u) => <option value={u.id} key={u.id} >{u.name}</option>) }
+                    {/* {userList.map((user) => <option value={user.id} key={user.id} onClick={()=> {setAim({...aim, user:{id: user.id, name: user.name}})}}>{user.name}</option>) } */}
                 </select>
             </div>
+
             
             <div class="container">
                 <label for="exampleFormControlInput1" class="form-label">На что будем копить?</label>
@@ -119,96 +226,28 @@ const Aims =()=> {
             </div>
             <div class="container">
                 <label for="exampleFormControlTextarea1" class="form-label">К какой дате нужно накопить?</label>
-                <input type="text"class="form-control" 
-                value={aim.date}  placeholder="Дата" 
-                onChange={event =>setAim({...aim, date: event.target.value})}/>
-            </div>
-
-            <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"/>
-            <link rel="stylesheet" href="https://jqueryui.com//resources/demos/style.css"/>
-            <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-            <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-            
-            {function() {
-                $( '#datepicker' ).datepicker()
-            } }
-            
-
-            <p>Date: <input type="text"  id="datepicker"/></p>
-
-            {/* <section class="container">
-            <h2 class="py-2">Datepicker in Bootstrap 5</h2>
-            <form class="row">
-            <label for="date" class="col-1 col-form-label">Date</label>
-            <div class="col-5">
-                <div class="input-group date" id="datepicker">
-                    <input type="text" class="form-control" id="date"/>
-                    <span class="input-group-append">
-                        <span class="input-group-text bg-light d-block">
-                        <i class="fa fa-calendar"></i>
-                        </span>
-                    </span>        
+                <div>
+                    <DatePicker selected={selectDate} onChange={date => setSelectedDate(date)} dateFormat={"dd/MM/yyyy"} minDate={new Date()} />
                 </div>
             </div>
-            </form>
-            </section> */}
-            
-            {/* <meta charset="utf-8"/>
-            <meta name="viewport" content="width=device-width, initial-scale=1"/>
-            <title>How To Add Bootstrap 5 Datepicker - Techsolutionstuff</title>
-            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha3/dist/css/bootstrap.min.css"/>
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css"/>
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>		
-            {/* <style>
-                .input-group-append {
-                    cursor: pointer;
-                }
-                body{
-                    margin:80px !important;
-                }
-            </style> */} 
-
-            {/* <section class="container">
-            <meta charset="utf-8"/>
-            <meta name="viewport" content="width=device-width, initial-scale=1"/>
-            <title>jQuery UI Datepicker - Default functionality</title>
-            <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"/>
-            <link rel="stylesheet" href="/resources/demos/style.css"/>
-            <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-            <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-            <script>
-            $( function() {
-                '$( "#datepicker" ).datepicker()'
-            } );
-            </script>
-            <p>Date: <input type="text" id="datepicker"/></p>
-            </section> */}
-
-            {/* <section class="container">
-            <h3 class="py-2 mb-4">How To Add Bootstrap 5 Datepicker - Techsolutionstuff</h3>
-                <form class="row">
-                    <label for="date" class="col-1 col-form-label">Date</label>
-                    <div class="col-5">
-                    <div class="input-group date" id="datepicker">
-                        <input type="text" class="form-control" id="date"/>
-                        <span class="input-group-append">
-                        <span class="input-group-text bg-light d-block">
-                            <i class="fa fa-calendar"></i>
-                        </span>
-                        </span>
-                    </div>
-                    </div>
-                </form>
-            </section> */}
-
-            <datepicker/>
 
             <div class="container">
+                <button type="submit" class="btn btn-info" onClick={ShowDate}>show user</button>
+            </div>
+
+            <div>
+            <ImagesUpload arrayImages={ handleDataImages}  />
+            <div class="container">
+                <button type="submit" class="btn btn-info" onClick={postImages}>Добавить изображения</button>
+            </div>
+            </div>
+
+            {/* <div class="container">
                 <label for="exampleFormControlTextarea1" class="form-label">Картинка хотелки для мотивации</label>
                 <input type="text" class="form-control" 
                 value={aim.picture} placeholder="Изображение" 
                 onChange={event =>setAim({...aim, picture: event.target.value})}/>
-            </div>
+            </div> */}
             <div class="container">
                 <label for="exampleFormControlTextarea1" class="form-label">Каким способом будем копить?</label>
                 <input type="text" class="form-control" 
@@ -216,18 +255,10 @@ const Aims =()=> {
                 onChange={event =>setAim({...aim, waySaving: event.target.value})}/>
             </div>
             <div class="container">
-                <button type="submit" class="btn btn-info" onClick={AddNewAim}>Добавить цель</button>
+                <button type="submit" class="btn btn-info" onClick={Add}>Добавить цель</button>
             </div>
 
 
-            {/* <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.min.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
-            <script>
-                $(function(){
-                    '$(#datepicker).datepicker()'
-                });
-            </script> */}
         </Fragment>
 
         

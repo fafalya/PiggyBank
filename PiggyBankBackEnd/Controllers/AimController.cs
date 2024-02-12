@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using PiggyBankBackEnd.Context;
 using PiggyBankBackEnd.DTOs;
 using PiggyBankBackEnd.Entities;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace PiggyBankBackEnd.Controllers
 {
@@ -27,18 +28,27 @@ namespace PiggyBankBackEnd.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateAim([FromBody] CreateUpdateAimDTO dto)
         {
-            var newAim = new AimEntity()
-            {
-                //Id = dto.Id,
-                Title = dto.Title,
-                Price = dto.Price,
-                Date = dto.Date,
-                PicturePath = dto.PicturePath,
-                WayOfSaving = dto.WayOfSaving,
-                User = dto.User,
-                UserId= dto.UserId,
 
-            };
+            var newAim = new AimEntity();
+            newAim.Title = dto.Title;
+            newAim.Price = dto.Price;
+            newAim.Date = dto.Date;
+            newAim.WayOfSaving = dto.WayOfSaving;
+            //newAim.User = dto.User;
+            newAim.UserId = dto.UserId;
+            newAim.Images = new List<ImageEntity>();
+            if (dto.ImagesId != null)
+            {
+                foreach (var imageId in dto.ImagesId)
+                {
+                    try
+                    {
+                        var image = await _context.Images.FindAsync(imageId);
+                        if (image != null) newAim.Images.Add(image);
+                    }
+                    catch (Exception ex) { return BadRequest(ex.Message); }
+                }
+            }
             await _context.Aims.AddAsync(newAim);
             await _context.SaveChangesAsync();
 
@@ -53,7 +63,7 @@ namespace PiggyBankBackEnd.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<AimEntity>>> GetAllAims()
         {
-            var aims = await _context.Aims.ToListAsync();
+            var aims = await _context.Aims.Include(aim =>aim.Images).Include(aim => aim.User).ToListAsync();
 
             return Ok(aims);
         }
@@ -65,9 +75,8 @@ namespace PiggyBankBackEnd.Controllers
         [Route("{id}")]
         public async Task<ActionResult<AimEntity>> GetAimById([FromRoute] long id)
         {
-            var aim = await _context.Aims.FirstOrDefaultAsync(q => q.Id == id);
-
-            if(aim is null)
+            var aim = await _context.Aims.Include(aim=>aim.Images).Include(aim => aim.User).FirstOrDefaultAsync(q => q.Id == id);
+            if (aim is null)
             {
                 return NotFound("Aim is not found!");
             }
@@ -83,21 +92,29 @@ namespace PiggyBankBackEnd.Controllers
         [Route("{id}")]
         public async Task<IActionResult> UpdateAim([FromRoute] long id, [FromBody] CreateUpdateAimDTO dto)
         {
-            var aim = await _context.Aims.FirstOrDefaultAsync(q => q.Id == id);
+            var aim = await _context.Aims.Include(aim => aim.Images).Include(aim => aim.User).FirstOrDefaultAsync(q => q.Id == id);
 
             if (aim is null)
             {
                 return NotFound("Aim is not found!");
             }
-
-            //aim.Id=dto.Id;
+            var tempImages = new List<ImageEntity>();
+            foreach (var imageId in dto.ImagesId)
+            {
+                try
+                {
+                    var image = await _context.Images.FindAsync(imageId);
+                    if (image != null) tempImages.Add(image);
+                }
+                catch (Exception ex) { return BadRequest(ex.Message); }
+            }
             aim.Title = dto.Title;
             aim.Price = dto.Price;
             aim.Date = dto.Date;
-            aim.PicturePath = dto.PicturePath;
             aim.WayOfSaving = dto.WayOfSaving;
-            aim.User = dto.User;
+            //aim.User = dto.User;
             aim.UserId = dto.UserId;
+            aim.Images = tempImages;
 
             await _context.SaveChangesAsync();
 
@@ -112,7 +129,7 @@ namespace PiggyBankBackEnd.Controllers
         [Route("{id}")]
         public async Task<IActionResult> DeleteAim([FromRoute] long id)
         {
-            var aim = await _context.Aims.FirstOrDefaultAsync(q => q.Id == id);
+            var aim = await _context.Aims.Include(aim => aim.Images).Include(aim => aim.User).FirstOrDefaultAsync(q => q.Id == id);
 
             if (aim is null)
             {

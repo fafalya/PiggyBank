@@ -3,9 +3,9 @@ import React from 'react';
 import { Fragment } from "react";
 //import {NavLink} from "react-router-dom";
 
-function NavBar() {
+function Header() {
     return (
-        // <Navbar>
+
             <Fragment>
        
         
@@ -39,4 +39,4 @@ function NavBar() {
     );
 };
 
-export default NavBar;
+export default Header;
