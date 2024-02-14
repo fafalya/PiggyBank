@@ -205,7 +205,36 @@ body {
   text-transform: capitalize;
   transition: all .3s;
 }
-
+/* 
+---------------------------------------------
+custom dark button
+--------------------------------------------- 
+*/
+.main-dark-button  {
+  display: inline-block;
+  font-size: 13px;
+  padding: 6px 9px;
+  background-color: #343a3e;
+  color: #fff;
+  text-align: center;
+  font-weight: 500;
+  transition: all .3s;
+  width: 200px;
+  
+}
+.main-dark-button :hover {
+  opacity: 0.9;
+}
+.text-button  {
+  font-size: 14px;
+  color: #7c838b;
+  transition: all .3s;
+}
+/* 
+---------------------------------------------
+custom dark button
+--------------------------------------------- 
+*/
 .main-dark-button a:hover {
   opacity: 0.9;
 }

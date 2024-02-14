@@ -3,7 +3,9 @@ import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
 import { UrlAims, UrlUsers, UrlUploadImages } from '../urls/urlsList';
 import ImagesUpload from '../components/ImagesUpload/ImagesUpload';
+import AimCards from '../components/AimCards/AimCards';
 import axios from 'axios';
+
 
 
 
@@ -42,13 +44,16 @@ const Aims =()=> {
             userId: result.id
         })
     }
+    const handleAddWay = (event) => {
+        let way = parseInt(event.target.value)
+        setAim({
+            ...aim,
+            waySaving: way
+        })
+    }
     var imagesArray;
     const handleDataImages = (data) => {
-        console.log('что получила из imagesupload');
-        console.log(data);
         setDataResponseImage(data);
-        console.log('положилось ли информация куда надо ');
-        console.log(dataResponseImage)
     }
 
     useEffect(()=>{
@@ -73,13 +78,8 @@ const Aims =()=> {
     
 
     async function AddNewAim () {
-        console.log("ready for uploading images");
         try {
-            console.log("ready for uploading images");
-            console.log(imagesArray);
-            console.log("finish uploading images");
             setAim({... aim , date:selectDate, imagesId:imagesArray})
-            console.log(aim.imagesId);
             await axios.post(UrlAims,{
                 title: aim.title,
                 price: aim.price,
@@ -95,8 +95,8 @@ const Aims =()=> {
                 imagesId: aim.imagesId              
             });
             alert("Добавили новую цель");
+            console.log(aim.waySaving);
             setAim("");
-            //ClearInput();
             Load();
         } catch(error){
             alert(error);
@@ -105,160 +105,116 @@ const Aims =()=> {
 
     async function postImages()  {
         const formData = new FormData();
-        for (const data of dataResponseImage) {
-            console.log(data);
-        }
         for (let i = 0; i < dataResponseImage.length; i++) {
             formData.append('images', dataResponseImage[i].file);
         }
-        console.log("смотрим что лежит в формДате");
-        for (const data of formData) {
-            console.log(data);
-        }
         try {
             await axios.post(UrlUploadImages, formData)
-                .then((res) => {
-                    //выводим ответ от сервера (массив id изображений)
-                    console.log("выводим ответ от сервера (массив id изображений)");
-                    console.log(res.data);                   
+                .then((res) => {                 
                     imagesArray = res.data;
-                    console.log("выводи что лежит в ответе (массиве imagesArray1)");
-                    console.log(imagesArray);
                 })
-            console.log('Изображения успешно добавлены11111111');
+            console.log('Добавили изображения');
         }
         catch (e) {
             console.log('Ошибка добавления изображений')
         }
     }
     async function Add(){
-        console.log("теститруем1")
         await postImages();
         await AddNewAim();
-        console.log("теститруем2")
-        console.log(aim)
     }
-    // function postFlower() {
-    //     try {
-    //         var dBcategory = document.getElementById("dropdownButtonCategory")
-    //         var dBcolor = document.getElementById("dropdownButtonColor")
-    //         var dBCountry = document.getElementById("dropdownButonCountry")
-    //         //console.log(dBcategory.dataset.idcategory)
-    //         //console.log(dBcolor.dataset.idcolor)
-    //         //console.log(dBCountry.dataset.idcountry)
-
-    //         var flower = {
-    //             title: inputValueFlower.title,
-    //             price: inputValueFlower.price,
-    //             count: inputValueFlower.count,
-    //             categoryId: dBcategory.dataset.idcategory,
-    //             colorId: dBcolor.dataset.idcolor,
-    //             countryId: dBCountry.dataset.idcountry,
-    //             imagesId: imagesArray
-    //         };
-    //         console.log(flower);
-    //         axios.post(urlFlowers, flower);
-    //     }
-    //     catch (e) {
-    //         alert('Ошибка добавления цветка')
-    //     }
-    //     alert('Цветок успешно добавлен')
-    // }
-
-    function ShowDate(){
-        console.log("test for date start");
-        console.log(selectDate);
-        console.log("test for date end")
-    }
-    
      
     
     return (
         <Fragment>
-            <div className="main-banner">
-                <div className="counter-content">
-                    <ul>
-                        <li>Days<span id="days"></span></li>
-                        <li>Hours<span id="hours"></span></li>
-                        <li>Minutes<span id="minutes"></span></li>
-                        <li>Seconds<span id="seconds"></span></li>
-                    </ul>
-                </div>
+            <div className="page-heading-about">
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-12">
-                            <div className="main-content">
-                                <div className="next-show">
-                                    <i className="fa fa-arrow-up"></i>
-                                    <span></span>
+                            <h2>PiggyBank</h2>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div className="about-item">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-lg-8">
+                            <div className="left-image">
+                                <img src="assets/images/about-image.jpg" alt="party time"/>
+                            </div>
+                        </div>
+                        <div className="col-lg-4">
+                            <div className="right-content">
+                                <div className="about-map-image">
+                                    <img src="assets/images/about-map-image.jpg" alt="party location"/>
                                 </div>
-                                <h4>В процессе разработки</h4>
-                                <h2>Цели для накопления</h2>
-                                
+                                <div className="down-content">
+                                    <h4>Мотивация для накопления денег</h4>
+                                    <ul>
+                                        <li>Выбери на что хочешь копить</li>
+                                        <li>Выбери как хочешь копить</li>
+                                    </ul>
+                                    <div className="main-dark-button">
+                                        <a href="ticket-details.html">Выбрать</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="container">
-                <label  class="form-label">Кто будет копить?</label>
-                <select class="form-select" aria-label="Default select example" placeholder="пользователь" onChange={handleAddUser}>
-                    <option defaultValue selecte disabled>Выберите пользователя</option>
-                    {/* {userList.map((u) => <option value={u.id} key={u.id} onClick={()=> {setUser(u)}}>{u.name}</option>) } */}
-                    {userList.map((u) => <option value={u.id} key={u.id} >{u.name}</option>) }
-                    {/* {userList.map((user) => <option value={user.id} key={user.id} onClick={()=> {setAim({...aim, user:{id: user.id, name: user.name}})}}>{user.name}</option>) } */}
-                </select>
-            </div>
+            {/* choosing datas for aim */}
+            <div className="also-like">
+                <div className="container" >
+                    <div className="row" >
+                        <div className="col-lg-10" >
+                            <h2 >Я хочу...</h2>
+                        </div>
+                        <div className="col-lg-10" style={{ margin : 'auto' }}>
+                            <div className="like-item">
+                                <div className="thumb">
+                                    <img src="assets/images/mini_banner_bg.jpg" alt="" style={{  height: '200px' }}/>
+                                </div>
+                                <div className="down-content">
+                                    <span>Кто будет копить?</span><p style={{ margin : '10px' }}></p>
+                                    <select class="form-select" aria-label="Default select example" placeholder="пользователь" onChange={handleAddUser} style={{  width: '860px' }}>
+                                        <option defaultValue selecte disabled>Выберите пользователя</option>
+                                        {userList.map((u) => <option value={u.id} key={u.id} >{u.name}</option>) }
+                                    </select><p style={{ margin : '10px' }}></p>
+                                    <span>На что будем копить?</span><p style={{ margin : '10px' }}></p>
+                                    <input type="text" class="form-control" style={{  width: '860px' }}
+                                    value={aim.title} placeholder="Хотелка" 
+                                    onChange={event =>setAim({...aim, title: event.target.value})}/><p style={{ margin : '10px' }}></p>
+                                    <span>Сколько нужно накопить?</span><p style={{ margin : '10px' }}></p>
+                                    <input type="text" class="form-control" style={{  width: '860px' }}
+                                    value={aim.price}  placeholder="Сумма" 
+                                    onChange={event =>setAim({...aim, price: event.target.value})}/><p style={{ margin : '10px' }}></p>
+                                    <span>К какой дате нужно накопить?</span><p style={{ margin : '10px' }}></p>
+                                    <DatePicker selected={selectDate} onChange={date => setSelectedDate(date)} dateFormat={"dd/MM/yyyy"} minDate={new Date()} /><p style={{ margin : '10px' }}></p>
+                                    <span>Добавь картинку цели для мотивации</span><p style={{ margin : '10px' }}></p>
+                                    <ImagesUpload arrayImages={ handleDataImages} /><p style={{ margin : '10px' }}></p>
+                                    <span>Каким способ будем копить?</span><p style={{ margin : '10px' }}></p>
+                                    <select class="form-select"  onChange={handleAddWay} style={{  width: '860px' }}>
+                                        <option defaultValue selecte disabled>Выбери способ</option>
+                                        <option value="1">Магия маленьких чисел</option>
+                                        <option value="2">Округление ежедневного остатка на счете</option>
+                                        <option value="3">Фиксированная сумма каждый день</option>
+                                    </select><p style={{ margin : '10px' }}></p>
+                                    <button type="submit" id="form-submit" class="main-dark-button" onClick={Add} style={{ marginBlock : '10px'}} >Добавить цель</button><p style={{ margin : '10px' }}></p>
+                                </div>
 
-            
-            <div class="container">
-                <label for="exampleFormControlInput1" class="form-label">На что будем копить?</label>
-                <input type="text" class="form-control" 
-                value={aim.title} placeholder="Хотелка" 
-                onChange={event =>setAim({...aim, title: event.target.value})}/>
-            </div>
-            <div class="container">
-                <label for="exampleFormControlTextarea1" class="form-label">Сколько нужно накопить?</label>
-                <input type="text" class="form-control" 
-                value={aim.price}  placeholder="Сумма" 
-                onChange={event =>setAim({...aim, price: event.target.value})}/>
-            </div>
-            <div class="container">
-                <label for="exampleFormControlTextarea1" class="form-label">К какой дате нужно накопить?</label>
-                <div>
-                    <DatePicker selected={selectDate} onChange={date => setSelectedDate(date)} dateFormat={"dd/MM/yyyy"} minDate={new Date()} />
+                            </div>
+                        </div>                                              
+                    </div>
                 </div>
             </div>
 
-            <div class="container">
-                <button type="submit" class="btn btn-info" onClick={ShowDate}>show user</button>
-            </div>
 
-            <div>
-            <ImagesUpload arrayImages={ handleDataImages}  />
-            <div class="container">
-                <button type="submit" class="btn btn-info" onClick={postImages}>Добавить изображения</button>
-            </div>
-            </div>
-
-            {/* <div class="container">
-                <label for="exampleFormControlTextarea1" class="form-label">Картинка хотелки для мотивации</label>
-                <input type="text" class="form-control" 
-                value={aim.picture} placeholder="Изображение" 
-                onChange={event =>setAim({...aim, picture: event.target.value})}/>
-            </div> */}
-            <div class="container">
-                <label for="exampleFormControlTextarea1" class="form-label">Каким способом будем копить?</label>
-                <input type="text" class="form-control" 
-                value={aim.waySaving}  placeholder="Способ накопления" 
-                onChange={event =>setAim({...aim, waySaving: event.target.value})}/>
-            </div>
-            <div class="container">
-                <button type="submit" class="btn btn-info" onClick={Add}>Добавить цель</button>
-            </div>
-
-
+            {/* <AimCards/> */}
         </Fragment>
 
         

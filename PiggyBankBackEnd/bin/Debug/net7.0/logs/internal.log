@@ -4058,3 +4058,243 @@ System.TypeLoadException: Could not load type 'System.Web.HttpCookie' from assem
 2024-02-11 17:30:13.4442 Info Configuration initialized.
 2024-02-11 17:30:13.4442 Info FileTarget(Name=alllogfile): Deleting old archive file: 'F:\Yulya\repos\PiggyBank\PiggyBankBackEnd\bin\Debug\net7.0\logs\all-logs-2024-02-11.log'.
 2024-02-11 17:30:13.5936 Info FileTarget(Name=classlogfile): Deleting old archive file: 'F:\Yulya\repos\PiggyBank\PiggyBankBackEnd\bin\Debug\net7.0\logs\class-logs-2024-02-11.log'.
+2024-02-12 13:06:10.8193 Info Loading assembly name: Nlog.Web
+2024-02-12 13:06:10.8429 Info NLog.Web, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.8.1035. Product version: 5.3.8+0c5db2371c65c25905734b0335fd0c593ee61ad6. GlobalAssemblyCache: False
+2024-02-12 13:06:10.8626 Warn Loaded 88 valid types from Assembly: NLog.Web, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c Exception: System.Reflection.ReflectionTypeLoadException: Unable to load one or more of the requested types.
+Could not load type 'System.Web.IHttpModule' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+Could not load type 'System.Web.IHttpModule' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+Could not load type 'System.Web.IHttpModule' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+Could not load type 'System.Web.HttpCookie' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+Could not load type 'System.Web.HttpCookie' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+Could not load type 'System.Web.HttpCookie' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+   at System.Reflection.RuntimeModule.GetTypes(RuntimeModule module)
+   at System.Reflection.Assembly.GetTypes()
+   at NLog.Internal.AssemblyHelpers.SafeGetTypes(Assembly assembly)
+System.TypeLoadException: Could not load type 'System.Web.IHttpModule' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+System.TypeLoadException: Could not load type 'System.Web.IHttpModule' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+System.TypeLoadException: Could not load type 'System.Web.IHttpModule' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+System.TypeLoadException: Could not load type 'System.Web.HttpCookie' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+System.TypeLoadException: Could not load type 'System.Web.HttpCookie' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+System.TypeLoadException: Could not load type 'System.Web.HttpCookie' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+2024-02-12 13:06:10.8906 Warn Type load exception. Exception: System.TypeLoadException: Could not load type 'System.Web.IHttpModule' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+2024-02-12 13:06:10.8906 Warn Type load exception. Exception: System.TypeLoadException: Could not load type 'System.Web.IHttpModule' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+2024-02-12 13:06:10.8906 Warn Type load exception. Exception: System.TypeLoadException: Could not load type 'System.Web.IHttpModule' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+2024-02-12 13:06:10.8906 Warn Type load exception. Exception: System.TypeLoadException: Could not load type 'System.Web.HttpCookie' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+2024-02-12 13:06:10.8906 Warn Type load exception. Exception: System.TypeLoadException: Could not load type 'System.Web.HttpCookie' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+2024-02-12 13:06:10.8906 Warn Type load exception. Exception: System.TypeLoadException: Could not load type 'System.Web.HttpCookie' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+2024-02-12 13:06:10.9258 Info Registered target NLog.Targets.FileTarget(Name=alllogfile)
+2024-02-12 13:06:10.9258 Info Registered target NLog.Targets.FileTarget(Name=classlogfile)
+2024-02-12 13:06:10.9258 Info Registered target NLog.Targets.ConsoleTarget(Name=logconsole)
+2024-02-12 13:06:10.9258 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.2.8.2366. Product version: 5.2.8+f586f1341c46fa38aaaff4c641e7f0fa7e813943. GlobalAssemblyCache: False
+2024-02-12 13:06:10.9407 Info Validating config: TargetNames=alllogfile, logconsole, classlogfile, ConfigItems=43, FilePath=F:\Yulya\repos\PiggyBank\PiggyBankBackEnd\NLog.config
+2024-02-12 13:06:10.9407 Info Configuration initialized.
+2024-02-12 13:06:11.1321 Info FileTarget(Name=alllogfile): Deleting old archive file: 'F:\Yulya\repos\PiggyBank\PiggyBankBackEnd\bin\Debug\net7.0\logs\all-logs-2024-02-12.log'.
+2024-02-12 13:06:11.2260 Info Loading NLog config from XML file: F:\Yulya\repos\PiggyBank\PiggyBankBackEnd\bin\Debug\net7.0\NLog.config
+2024-02-12 13:06:11.2260 Info Registered target NLog.Targets.FileTarget(Name=alllogfile)
+2024-02-12 13:06:11.2260 Info Registered target NLog.Targets.FileTarget(Name=classlogfile)
+2024-02-12 13:06:11.2260 Info Registered target NLog.Targets.ConsoleTarget(Name=logconsole)
+2024-02-12 13:06:11.2260 Info Closing old configuration.
+2024-02-12 13:06:11.2260 Info Validating config: TargetNames=alllogfile, logconsole, classlogfile, ConfigItems=43, FilePath=F:\Yulya\repos\PiggyBank\PiggyBankBackEnd\bin\Debug\net7.0\NLog.config
+2024-02-12 13:06:11.2260 Info Configuration initialized.
+2024-02-12 13:06:11.2382 Info FileTarget(Name=alllogfile): Deleting old archive file: 'F:\Yulya\repos\PiggyBank\PiggyBankBackEnd\bin\Debug\net7.0\logs\all-logs-2024-02-12.log'.
+2024-02-12 13:06:11.4429 Info FileTarget(Name=classlogfile): Deleting old archive file: 'F:\Yulya\repos\PiggyBank\PiggyBankBackEnd\bin\Debug\net7.0\logs\class-logs-2024-02-12.log'.
+2024-02-13 20:09:58.0353 Info Loading assembly name: Nlog.Web
+2024-02-13 20:09:58.0589 Info NLog.Web, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.8.1035. Product version: 5.3.8+0c5db2371c65c25905734b0335fd0c593ee61ad6. GlobalAssemblyCache: False
+2024-02-13 20:09:58.0783 Warn Loaded 88 valid types from Assembly: NLog.Web, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c Exception: System.Reflection.ReflectionTypeLoadException: Unable to load one or more of the requested types.
+Could not load type 'System.Web.IHttpModule' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+Could not load type 'System.Web.IHttpModule' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+Could not load type 'System.Web.IHttpModule' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+Could not load type 'System.Web.HttpCookie' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+Could not load type 'System.Web.HttpCookie' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+Could not load type 'System.Web.HttpCookie' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+   at System.Reflection.RuntimeModule.GetTypes(RuntimeModule module)
+   at System.Reflection.Assembly.GetTypes()
+   at NLog.Internal.AssemblyHelpers.SafeGetTypes(Assembly assembly)
+System.TypeLoadException: Could not load type 'System.Web.IHttpModule' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+System.TypeLoadException: Could not load type 'System.Web.IHttpModule' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+System.TypeLoadException: Could not load type 'System.Web.IHttpModule' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+System.TypeLoadException: Could not load type 'System.Web.HttpCookie' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+System.TypeLoadException: Could not load type 'System.Web.HttpCookie' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+System.TypeLoadException: Could not load type 'System.Web.HttpCookie' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+2024-02-13 20:09:58.1092 Warn Type load exception. Exception: System.TypeLoadException: Could not load type 'System.Web.IHttpModule' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+2024-02-13 20:09:58.1092 Warn Type load exception. Exception: System.TypeLoadException: Could not load type 'System.Web.IHttpModule' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+2024-02-13 20:09:58.1092 Warn Type load exception. Exception: System.TypeLoadException: Could not load type 'System.Web.IHttpModule' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+2024-02-13 20:09:58.1092 Warn Type load exception. Exception: System.TypeLoadException: Could not load type 'System.Web.HttpCookie' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+2024-02-13 20:09:58.1092 Warn Type load exception. Exception: System.TypeLoadException: Could not load type 'System.Web.HttpCookie' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+2024-02-13 20:09:58.1092 Warn Type load exception. Exception: System.TypeLoadException: Could not load type 'System.Web.HttpCookie' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+2024-02-13 20:09:58.1354 Info Registered target NLog.Targets.FileTarget(Name=alllogfile)
+2024-02-13 20:09:58.1354 Info Registered target NLog.Targets.FileTarget(Name=classlogfile)
+2024-02-13 20:09:58.1354 Info Registered target NLog.Targets.ConsoleTarget(Name=logconsole)
+2024-02-13 20:09:58.1354 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.2.8.2366. Product version: 5.2.8+f586f1341c46fa38aaaff4c641e7f0fa7e813943. GlobalAssemblyCache: False
+2024-02-13 20:09:58.1472 Info Validating config: TargetNames=alllogfile, logconsole, classlogfile, ConfigItems=43, FilePath=F:\Yulya\repos\PiggyBank\PiggyBankBackEnd\NLog.config
+2024-02-13 20:09:58.1472 Info Configuration initialized.
+2024-02-13 20:09:58.3314 Info FileTarget(Name=alllogfile): Deleting old archive file: 'F:\Yulya\repos\PiggyBank\PiggyBankBackEnd\bin\Debug\net7.0\logs\all-logs-2024-02-13.log'.
+2024-02-13 20:09:58.4255 Info Loading NLog config from XML file: F:\Yulya\repos\PiggyBank\PiggyBankBackEnd\bin\Debug\net7.0\NLog.config
+2024-02-13 20:09:58.4255 Info Registered target NLog.Targets.FileTarget(Name=alllogfile)
+2024-02-13 20:09:58.4255 Info Registered target NLog.Targets.FileTarget(Name=classlogfile)
+2024-02-13 20:09:58.4255 Info Registered target NLog.Targets.ConsoleTarget(Name=logconsole)
+2024-02-13 20:09:58.4255 Info Closing old configuration.
+2024-02-13 20:09:58.4255 Info Validating config: TargetNames=alllogfile, logconsole, classlogfile, ConfigItems=43, FilePath=F:\Yulya\repos\PiggyBank\PiggyBankBackEnd\bin\Debug\net7.0\NLog.config
+2024-02-13 20:09:58.4255 Info Configuration initialized.
+2024-02-13 20:09:58.4255 Info FileTarget(Name=alllogfile): Deleting old archive file: 'F:\Yulya\repos\PiggyBank\PiggyBankBackEnd\bin\Debug\net7.0\logs\all-logs-2024-02-13.log'.
+2024-02-13 20:09:58.6304 Info FileTarget(Name=classlogfile): Deleting old archive file: 'F:\Yulya\repos\PiggyBank\PiggyBankBackEnd\bin\Debug\net7.0\logs\class-logs-2024-02-13.log'.
+2024-02-14 20:07:13.1838 Info Loading assembly name: Nlog.Web
+2024-02-14 20:07:13.2051 Info NLog.Web, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.8.1035. Product version: 5.3.8+0c5db2371c65c25905734b0335fd0c593ee61ad6. GlobalAssemblyCache: False
+2024-02-14 20:07:13.2254 Warn Loaded 88 valid types from Assembly: NLog.Web, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c Exception: System.Reflection.ReflectionTypeLoadException: Unable to load one or more of the requested types.
+Could not load type 'System.Web.IHttpModule' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+Could not load type 'System.Web.IHttpModule' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+Could not load type 'System.Web.IHttpModule' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+Could not load type 'System.Web.HttpCookie' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+Could not load type 'System.Web.HttpCookie' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+Could not load type 'System.Web.HttpCookie' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+   at System.Reflection.RuntimeModule.GetTypes(RuntimeModule module)
+   at System.Reflection.Assembly.GetTypes()
+   at NLog.Internal.AssemblyHelpers.SafeGetTypes(Assembly assembly)
+System.TypeLoadException: Could not load type 'System.Web.IHttpModule' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+System.TypeLoadException: Could not load type 'System.Web.IHttpModule' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+System.TypeLoadException: Could not load type 'System.Web.IHttpModule' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+System.TypeLoadException: Could not load type 'System.Web.HttpCookie' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+System.TypeLoadException: Could not load type 'System.Web.HttpCookie' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+System.TypeLoadException: Could not load type 'System.Web.HttpCookie' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+2024-02-14 20:07:13.2548 Warn Type load exception. Exception: System.TypeLoadException: Could not load type 'System.Web.IHttpModule' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+2024-02-14 20:07:13.2548 Warn Type load exception. Exception: System.TypeLoadException: Could not load type 'System.Web.IHttpModule' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+2024-02-14 20:07:13.2548 Warn Type load exception. Exception: System.TypeLoadException: Could not load type 'System.Web.IHttpModule' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+2024-02-14 20:07:13.2548 Warn Type load exception. Exception: System.TypeLoadException: Could not load type 'System.Web.HttpCookie' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+2024-02-14 20:07:13.2548 Warn Type load exception. Exception: System.TypeLoadException: Could not load type 'System.Web.HttpCookie' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+2024-02-14 20:07:13.2548 Warn Type load exception. Exception: System.TypeLoadException: Could not load type 'System.Web.HttpCookie' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+2024-02-14 20:07:13.2740 Info Registered target NLog.Targets.FileTarget(Name=alllogfile)
+2024-02-14 20:07:13.2740 Info Registered target NLog.Targets.FileTarget(Name=classlogfile)
+2024-02-14 20:07:13.2740 Info Registered target NLog.Targets.ConsoleTarget(Name=logconsole)
+2024-02-14 20:07:13.2740 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.2.8.2366. Product version: 5.2.8+f586f1341c46fa38aaaff4c641e7f0fa7e813943. GlobalAssemblyCache: False
+2024-02-14 20:07:13.2945 Info Validating config: TargetNames=alllogfile, logconsole, classlogfile, ConfigItems=43, FilePath=F:\Yulya\repos\PiggyBank\PiggyBankBackEnd\NLog.config
+2024-02-14 20:07:13.2945 Info Configuration initialized.
+2024-02-14 20:07:13.4828 Info FileTarget(Name=alllogfile): Deleting old archive file: 'F:\Yulya\repos\PiggyBank\PiggyBankBackEnd\bin\Debug\net7.0\logs\all-logs-2024-02-14.log'.
+2024-02-14 20:07:13.5720 Info Loading NLog config from XML file: F:\Yulya\repos\PiggyBank\PiggyBankBackEnd\bin\Debug\net7.0\NLog.config
+2024-02-14 20:07:13.5720 Info Registered target NLog.Targets.FileTarget(Name=alllogfile)
+2024-02-14 20:07:13.5720 Info Registered target NLog.Targets.FileTarget(Name=classlogfile)
+2024-02-14 20:07:13.5720 Info Registered target NLog.Targets.ConsoleTarget(Name=logconsole)
+2024-02-14 20:07:13.5720 Info Closing old configuration.
+2024-02-14 20:07:13.5720 Info Validating config: TargetNames=alllogfile, logconsole, classlogfile, ConfigItems=43, FilePath=F:\Yulya\repos\PiggyBank\PiggyBankBackEnd\bin\Debug\net7.0\NLog.config
+2024-02-14 20:07:13.5720 Info Configuration initialized.
+2024-02-14 20:07:13.5720 Info FileTarget(Name=alllogfile): Deleting old archive file: 'F:\Yulya\repos\PiggyBank\PiggyBankBackEnd\bin\Debug\net7.0\logs\all-logs-2024-02-14.log'.
+2024-02-14 20:07:13.7644 Info FileTarget(Name=classlogfile): Deleting old archive file: 'F:\Yulya\repos\PiggyBank\PiggyBankBackEnd\bin\Debug\net7.0\logs\class-logs-2024-02-14.log'.
+2024-02-14 20:08:03.6792 Info Loading assembly name: Nlog.Web
+2024-02-14 20:08:03.6959 Info NLog.Web, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.8.1035. Product version: 5.3.8+0c5db2371c65c25905734b0335fd0c593ee61ad6. GlobalAssemblyCache: False
+2024-02-14 20:08:03.6959 Warn Loaded 88 valid types from Assembly: NLog.Web, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c Exception: System.Reflection.ReflectionTypeLoadException: Unable to load one or more of the requested types.
+Could not load type 'System.Web.IHttpModule' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+Could not load type 'System.Web.IHttpModule' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+Could not load type 'System.Web.IHttpModule' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+Could not load type 'System.Web.HttpCookie' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+Could not load type 'System.Web.HttpCookie' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+Could not load type 'System.Web.HttpCookie' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+   at System.Reflection.RuntimeModule.GetTypes(RuntimeModule module)
+   at System.Reflection.Assembly.GetTypes()
+   at NLog.Internal.AssemblyHelpers.SafeGetTypes(Assembly assembly)
+System.TypeLoadException: Could not load type 'System.Web.IHttpModule' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+System.TypeLoadException: Could not load type 'System.Web.IHttpModule' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+System.TypeLoadException: Could not load type 'System.Web.IHttpModule' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+System.TypeLoadException: Could not load type 'System.Web.HttpCookie' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+System.TypeLoadException: Could not load type 'System.Web.HttpCookie' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+System.TypeLoadException: Could not load type 'System.Web.HttpCookie' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+2024-02-14 20:08:03.7321 Warn Type load exception. Exception: System.TypeLoadException: Could not load type 'System.Web.IHttpModule' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+2024-02-14 20:08:03.7321 Warn Type load exception. Exception: System.TypeLoadException: Could not load type 'System.Web.IHttpModule' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+2024-02-14 20:08:03.7321 Warn Type load exception. Exception: System.TypeLoadException: Could not load type 'System.Web.IHttpModule' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+2024-02-14 20:08:03.7321 Warn Type load exception. Exception: System.TypeLoadException: Could not load type 'System.Web.HttpCookie' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+2024-02-14 20:08:03.7321 Warn Type load exception. Exception: System.TypeLoadException: Could not load type 'System.Web.HttpCookie' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+2024-02-14 20:08:03.7321 Warn Type load exception. Exception: System.TypeLoadException: Could not load type 'System.Web.HttpCookie' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+2024-02-14 20:08:03.7503 Info Registered target NLog.Targets.FileTarget(Name=alllogfile)
+2024-02-14 20:08:03.7503 Info Registered target NLog.Targets.FileTarget(Name=classlogfile)
+2024-02-14 20:08:03.7618 Info Registered target NLog.Targets.ConsoleTarget(Name=logconsole)
+2024-02-14 20:08:03.7618 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.2.8.2366. Product version: 5.2.8+f586f1341c46fa38aaaff4c641e7f0fa7e813943. GlobalAssemblyCache: False
+2024-02-14 20:08:03.7618 Info Validating config: TargetNames=alllogfile, logconsole, classlogfile, ConfigItems=43, FilePath=F:\Yulya\repos\PiggyBank\PiggyBankBackEnd\NLog.config
+2024-02-14 20:08:03.7854 Info Configuration initialized.
+2024-02-14 20:08:03.9442 Info FileTarget(Name=alllogfile): Deleting old archive file: 'F:\Yulya\repos\PiggyBank\PiggyBankBackEnd\bin\Debug\net7.0\logs\all-logs-2024-02-14.log'.
+2024-02-14 20:08:04.0207 Info Loading NLog config from XML file: F:\Yulya\repos\PiggyBank\PiggyBankBackEnd\bin\Debug\net7.0\NLog.config
+2024-02-14 20:08:04.0207 Info Registered target NLog.Targets.FileTarget(Name=alllogfile)
+2024-02-14 20:08:04.0207 Info Registered target NLog.Targets.FileTarget(Name=classlogfile)
+2024-02-14 20:08:04.0207 Info Registered target NLog.Targets.ConsoleTarget(Name=logconsole)
+2024-02-14 20:08:04.0207 Info Closing old configuration.
+2024-02-14 20:08:04.0294 Info Validating config: TargetNames=alllogfile, logconsole, classlogfile, ConfigItems=43, FilePath=F:\Yulya\repos\PiggyBank\PiggyBankBackEnd\bin\Debug\net7.0\NLog.config
+2024-02-14 20:08:04.0294 Info Configuration initialized.
+2024-02-14 20:08:04.0294 Info FileTarget(Name=alllogfile): Deleting old archive file: 'F:\Yulya\repos\PiggyBank\PiggyBankBackEnd\bin\Debug\net7.0\logs\all-logs-2024-02-14.log'.
+2024-02-14 20:08:04.1685 Info FileTarget(Name=classlogfile): Deleting old archive file: 'F:\Yulya\repos\PiggyBank\PiggyBankBackEnd\bin\Debug\net7.0\logs\class-logs-2024-02-14.log'.
+2024-02-14 20:36:37.9916 Info Loading assembly name: Nlog.Web
+2024-02-14 20:36:38.0136 Info NLog.Web, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.8.1035. Product version: 5.3.8+0c5db2371c65c25905734b0335fd0c593ee61ad6. GlobalAssemblyCache: False
+2024-02-14 20:36:38.0332 Warn Loaded 88 valid types from Assembly: NLog.Web, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c Exception: System.Reflection.ReflectionTypeLoadException: Unable to load one or more of the requested types.
+Could not load type 'System.Web.IHttpModule' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+Could not load type 'System.Web.IHttpModule' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+Could not load type 'System.Web.IHttpModule' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+Could not load type 'System.Web.HttpCookie' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+Could not load type 'System.Web.HttpCookie' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+Could not load type 'System.Web.HttpCookie' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+   at System.Reflection.RuntimeModule.GetTypes(RuntimeModule module)
+   at System.Reflection.Assembly.GetTypes()
+   at NLog.Internal.AssemblyHelpers.SafeGetTypes(Assembly assembly)
+System.TypeLoadException: Could not load type 'System.Web.IHttpModule' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+System.TypeLoadException: Could not load type 'System.Web.IHttpModule' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+System.TypeLoadException: Could not load type 'System.Web.IHttpModule' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+System.TypeLoadException: Could not load type 'System.Web.HttpCookie' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+System.TypeLoadException: Could not load type 'System.Web.HttpCookie' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+System.TypeLoadException: Could not load type 'System.Web.HttpCookie' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+2024-02-14 20:36:38.0531 Warn Type load exception. Exception: System.TypeLoadException: Could not load type 'System.Web.IHttpModule' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+2024-02-14 20:36:38.0531 Warn Type load exception. Exception: System.TypeLoadException: Could not load type 'System.Web.IHttpModule' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+2024-02-14 20:36:38.0531 Warn Type load exception. Exception: System.TypeLoadException: Could not load type 'System.Web.IHttpModule' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+2024-02-14 20:36:38.0531 Warn Type load exception. Exception: System.TypeLoadException: Could not load type 'System.Web.HttpCookie' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+2024-02-14 20:36:38.0531 Warn Type load exception. Exception: System.TypeLoadException: Could not load type 'System.Web.HttpCookie' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+2024-02-14 20:36:38.0531 Warn Type load exception. Exception: System.TypeLoadException: Could not load type 'System.Web.HttpCookie' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+2024-02-14 20:36:38.0773 Info Registered target NLog.Targets.FileTarget(Name=alllogfile)
+2024-02-14 20:36:38.0773 Info Registered target NLog.Targets.FileTarget(Name=classlogfile)
+2024-02-14 20:36:38.0773 Info Registered target NLog.Targets.ConsoleTarget(Name=logconsole)
+2024-02-14 20:36:38.0773 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.2.8.2366. Product version: 5.2.8+f586f1341c46fa38aaaff4c641e7f0fa7e813943. GlobalAssemblyCache: False
+2024-02-14 20:36:38.0926 Info Validating config: TargetNames=alllogfile, logconsole, classlogfile, ConfigItems=43, FilePath=F:\Yulya\repos\PiggyBank\PiggyBankBackEnd\NLog.config
+2024-02-14 20:36:38.1048 Info Configuration initialized.
+2024-02-14 20:36:38.2539 Info FileTarget(Name=alllogfile): Deleting old archive file: 'F:\Yulya\repos\PiggyBank\PiggyBankBackEnd\bin\Debug\net7.0\logs\all-logs-2024-02-14.log'.
+2024-02-14 20:36:38.3391 Info Loading NLog config from XML file: F:\Yulya\repos\PiggyBank\PiggyBankBackEnd\bin\Debug\net7.0\NLog.config
+2024-02-14 20:36:38.3391 Info Registered target NLog.Targets.FileTarget(Name=alllogfile)
+2024-02-14 20:36:38.3391 Info Registered target NLog.Targets.FileTarget(Name=classlogfile)
+2024-02-14 20:36:38.3391 Info Registered target NLog.Targets.ConsoleTarget(Name=logconsole)
+2024-02-14 20:36:38.3391 Info Closing old configuration.
+2024-02-14 20:36:38.3391 Info Validating config: TargetNames=alllogfile, logconsole, classlogfile, ConfigItems=43, FilePath=F:\Yulya\repos\PiggyBank\PiggyBankBackEnd\bin\Debug\net7.0\NLog.config
+2024-02-14 20:36:38.3391 Info Configuration initialized.
+2024-02-14 20:36:38.3391 Info FileTarget(Name=alllogfile): Deleting old archive file: 'F:\Yulya\repos\PiggyBank\PiggyBankBackEnd\bin\Debug\net7.0\logs\all-logs-2024-02-14.log'.
+2024-02-14 20:36:38.5135 Info FileTarget(Name=classlogfile): Deleting old archive file: 'F:\Yulya\repos\PiggyBank\PiggyBankBackEnd\bin\Debug\net7.0\logs\class-logs-2024-02-14.log'.
+2024-02-14 20:37:50.9760 Info Loading assembly name: Nlog.Web
+2024-02-14 20:37:50.9948 Info NLog.Web, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.8.1035. Product version: 5.3.8+0c5db2371c65c25905734b0335fd0c593ee61ad6. GlobalAssemblyCache: False
+2024-02-14 20:37:51.0098 Warn Loaded 88 valid types from Assembly: NLog.Web, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c Exception: System.Reflection.ReflectionTypeLoadException: Unable to load one or more of the requested types.
+Could not load type 'System.Web.IHttpModule' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+Could not load type 'System.Web.IHttpModule' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+Could not load type 'System.Web.IHttpModule' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+Could not load type 'System.Web.HttpCookie' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+Could not load type 'System.Web.HttpCookie' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+Could not load type 'System.Web.HttpCookie' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+   at System.Reflection.RuntimeModule.GetTypes(RuntimeModule module)
+   at System.Reflection.Assembly.GetTypes()
+   at NLog.Internal.AssemblyHelpers.SafeGetTypes(Assembly assembly)
+System.TypeLoadException: Could not load type 'System.Web.IHttpModule' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+System.TypeLoadException: Could not load type 'System.Web.IHttpModule' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+System.TypeLoadException: Could not load type 'System.Web.IHttpModule' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+System.TypeLoadException: Could not load type 'System.Web.HttpCookie' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+System.TypeLoadException: Could not load type 'System.Web.HttpCookie' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+System.TypeLoadException: Could not load type 'System.Web.HttpCookie' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+2024-02-14 20:37:51.0310 Warn Type load exception. Exception: System.TypeLoadException: Could not load type 'System.Web.IHttpModule' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+2024-02-14 20:37:51.0310 Warn Type load exception. Exception: System.TypeLoadException: Could not load type 'System.Web.IHttpModule' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+2024-02-14 20:37:51.0310 Warn Type load exception. Exception: System.TypeLoadException: Could not load type 'System.Web.IHttpModule' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+2024-02-14 20:37:51.0310 Warn Type load exception. Exception: System.TypeLoadException: Could not load type 'System.Web.HttpCookie' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+2024-02-14 20:37:51.0310 Warn Type load exception. Exception: System.TypeLoadException: Could not load type 'System.Web.HttpCookie' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+2024-02-14 20:37:51.0310 Warn Type load exception. Exception: System.TypeLoadException: Could not load type 'System.Web.HttpCookie' from assembly 'System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+2024-02-14 20:37:51.0579 Info Registered target NLog.Targets.FileTarget(Name=alllogfile)
+2024-02-14 20:37:51.0579 Info Registered target NLog.Targets.FileTarget(Name=classlogfile)
+2024-02-14 20:37:51.0579 Info Registered target NLog.Targets.ConsoleTarget(Name=logconsole)
+2024-02-14 20:37:51.0579 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.2.8.2366. Product version: 5.2.8+f586f1341c46fa38aaaff4c641e7f0fa7e813943. GlobalAssemblyCache: False
+2024-02-14 20:37:51.0579 Info Validating config: TargetNames=alllogfile, logconsole, classlogfile, ConfigItems=43, FilePath=F:\Yulya\repos\PiggyBank\PiggyBankBackEnd\NLog.config
+2024-02-14 20:37:51.0778 Info Configuration initialized.
+2024-02-14 20:37:51.2290 Info FileTarget(Name=alllogfile): Deleting old archive file: 'F:\Yulya\repos\PiggyBank\PiggyBankBackEnd\bin\Debug\net7.0\logs\all-logs-2024-02-14.log'.
+2024-02-14 20:37:51.2982 Info Loading NLog config from XML file: F:\Yulya\repos\PiggyBank\PiggyBankBackEnd\bin\Debug\net7.0\NLog.config
+2024-02-14 20:37:51.2982 Info Registered target NLog.Targets.FileTarget(Name=alllogfile)
+2024-02-14 20:37:51.2982 Info Registered target NLog.Targets.FileTarget(Name=classlogfile)
+2024-02-14 20:37:51.2982 Info Registered target NLog.Targets.ConsoleTarget(Name=logconsole)
+2024-02-14 20:37:51.2982 Info Closing old configuration.
+2024-02-14 20:37:51.3079 Info Validating config: TargetNames=alllogfile, logconsole, classlogfile, ConfigItems=43, FilePath=F:\Yulya\repos\PiggyBank\PiggyBankBackEnd\bin\Debug\net7.0\NLog.config
+2024-02-14 20:37:51.3079 Info Configuration initialized.
+2024-02-14 20:37:51.3079 Info FileTarget(Name=alllogfile): Deleting old archive file: 'F:\Yulya\repos\PiggyBank\PiggyBankBackEnd\bin\Debug\net7.0\logs\all-logs-2024-02-14.log'.
+2024-02-14 20:37:51.4548 Info FileTarget(Name=classlogfile): Deleting old archive file: 'F:\Yulya\repos\PiggyBank\PiggyBankBackEnd\bin\Debug\net7.0\logs\class-logs-2024-02-14.log'.
