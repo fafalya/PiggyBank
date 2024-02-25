@@ -42,13 +42,20 @@ namespace PiggyBankBackEnd.Controllers
                 expires: now.Add(TimeSpan.FromMinutes(AuthOptions.LIFETIME)),
                 signingCredentials: new SigningCredentials(AuthOptions.GetSymmetricSecurityKey(), SecurityAlgorithms.HmacSha256));
                 var encodedJwt = new JwtSecurityTokenHandler().WriteToken(jwt);
-            var response = new
+            try
             {
-                access_token = encodedJwt,
-                userId = identity[0].Value.ToString(),
-                userName = identity[1].Value.ToString(),
-            };
-            return Ok(response);
+                if (identity != null)
+                {
+                    var response = new
+                    {
+                        access_token = encodedJwt,
+                        userId = identity[0].Value.ToString(),
+                        userName = identity[1].Value.ToString(),
+                    };
+                    return Ok(response);
+                }
+                return NotFound("User is not found!");
+            } catch (Exception ex) { return BadRequest(ex.Message); }
         }
 
         /// <summary>

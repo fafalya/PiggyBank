@@ -1,31 +1,20 @@
 import React from 'react';
 import { Fragment } from "react";
 
+
 const Home =() =>{
     return (
         
         <Fragment>
             <div className="main-banner">
-        <div className="counter-content">
-            <ul>
-                <li>Days<span id="days"></span></li>
-                <li>Hours<span id="hours"></span></li>
-                <li>Minutes<span id="minutes"></span></li>
-                <li>Seconds<span id="seconds"></span></li>
-            </ul>
-        </div>
         <div className="container">
             <div className="row">
                 <div className="col-lg-12">
                     <div className="main-content">
-                        <div className="next-show">
-                            <i className="fa fa-arrow-up"></i>
-                            <span></span>
-                        </div>
                         <h5>Приложение </h5>
                         <h2>КОПИЛКА</h2>
                         <div className="main-white-button">
-                            <a href="/aims">Начать копить</a>
+                            <a href="/Authorization">Войти</a>
                         </div>
                     </div>
                 </div>
@@ -39,7 +28,7 @@ const Home =() =>{
                         <div className="col-lg-12">
                             <h2>Что такое PiggyBank?</h2>
                             <p><p>PiggyBank - это приложение-копилка. Здесь вы можете 
-                            <a href="/Users"> авторизоваться </a> и <a href="/Aims"> выбрать </a> на что собираетесь копить.
+                            <a href="/Registration"> зарегистрироваться </a> и выбрать на что собираетесь копить.
                             Приложение поможет выбрать схему накопления и создать мотивацию для достижения своей цели. 
                             </p></p>
                             <h4>Рекомендуемые схемы накопления:</h4>

@@ -6,7 +6,10 @@ export const UrlUsersById = UrlBase +'/api/User/';
 
 //Aims
 export const UrlAims = UrlBase + '/api/Aim';
-export const UrlAimsById = UrlBase + '/api/Aim/';
+export const UrlAimsByUserId = UrlBase + '/api/Aim/';
 
 //Images
 export const UrlUploadImages = UrlBase + '/api/Image'
+
+//Authorization
+export const UrlAuth = UrlBase + '/api/Authentication'

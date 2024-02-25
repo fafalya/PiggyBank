@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PiggyBankBackEnd.Context;
@@ -10,6 +11,7 @@ namespace PiggyBankBackEnd.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class AimController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
@@ -71,18 +73,34 @@ namespace PiggyBankBackEnd.Controllers
         /// <summary>
         /// Controller for showing aim by Id
         /// </summary>
-        [HttpGet]
-        [Route("{id}")]
-        public async Task<ActionResult<AimEntity>> GetAimById([FromRoute] long id)
-        {
-            var aim = await _context.Aims.Include(aim=>aim.Images).Include(aim => aim.User).FirstOrDefaultAsync(q => q.Id == id);
-            if (aim is null)
-            {
-                return NotFound("Aim is not found!");
-            }
+        //[HttpGet]
+        //[Route("{id}")]
+        //public async Task<ActionResult<AimEntity>> GetAimById([FromRoute] long id)
+        //{
+        //    var aim = await _context.Aims.Include(aim=>aim.Images).Include(aim => aim.User).FirstOrDefaultAsync(q => q.Id == id);
+        //    if (aim is null)
+        //    {
+        //        return NotFound("Aim is not found!");
+        //    }
 
-            return Ok(aim);
+        //    return Ok(aim);
+        //}
+
+        ///<summary>
+        /// Controller for showing aim by User Id
+        /// </summary>
+        [HttpGet]
+        [Route("{userId}")]
+        public async Task<ActionResult<AimEntity>> GetAimByUserId([FromRoute] long userId)
+        {
+            if (_context.Users.FirstOrDefault(u=>u.Id==userId) == null)
+                throw new Exception($"User with Id {userId} doesn`t exist");
+            var aimsList = await _context.Aims.Include(aim => aim.Images).Where(a => a.UserId == userId).ToListAsync();
+
+
+            return Ok(aimsList);
         }
+
 
         //update
         /// <summary>

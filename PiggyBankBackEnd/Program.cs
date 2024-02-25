@@ -62,6 +62,27 @@ builder.Services.AddSwaggerGen(options =>
     });
     var xmlFileDocument = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
     options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFileDocument));
+
+    options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
+    {
+        Name = "Authorization",
+        Type = SecuritySchemeType.ApiKey,
+        Scheme = "Bearer",
+        BearerFormat = "JWT",
+        In = ParameterLocation.Header,
+        Description = "Enter token in format: word 'Bearer' [space] {token}\r\n\r\nExample: Bearer YW1lIjoidXNlciI"
+    });
+    options.AddSecurityRequirement(new OpenApiSecurityRequirement {
+            {
+                new OpenApiSecurityScheme {
+                    Reference = new OpenApiReference {
+                        Type = ReferenceType.SecurityScheme,
+                            Id = "Bearer"
+                    }
+                },
+                new string[] {}
+            }
+    });
 }); 
 
 

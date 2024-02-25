@@ -15,10 +15,10 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:PiggyBankBackEnd.Controllers.AimController.GetAimById(System.Int64)">
+        <member name="M:PiggyBankBackEnd.Controllers.AimController.GetAimByUserId(System.Int64)">
             <summary>
-            Controller for showing aim by Id
-            </summary>
+             Controller for showing aim by User Id
+             </summary>
         </member>
         <member name="M:PiggyBankBackEnd.Controllers.AimController.UpdateAim(System.Int64,PiggyBankBackEnd.DTOs.CreateUpdateAimDTO)">
             <summary>

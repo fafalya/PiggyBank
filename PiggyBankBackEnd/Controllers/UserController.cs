@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Identity.Client;
 using PiggyBankBackEnd.Context;
@@ -59,6 +60,7 @@ namespace PiggyBankBackEnd.Controllers
         /// Controller for showing all users
         /// </summary>
         [HttpGet]
+        [Authorize]
         public async Task<ActionResult<IEnumerable<UserEntity>>> GetAllUsers ()
         {
             var users = await _context.Users.ToListAsync();
@@ -71,6 +73,7 @@ namespace PiggyBankBackEnd.Controllers
         /// </summary>
         [HttpGet]
         [Route("{id}")]
+        [Authorize]
         public async Task<ActionResult<UserEntity>> GetUserById([FromRoute] long id )
         {
             var user =await  _context.Users.FirstOrDefaultAsync(q => q.Id == id);
@@ -87,6 +90,7 @@ namespace PiggyBankBackEnd.Controllers
         /// </summary>
         [HttpPut]
         [Route("{id}")]
+        [Authorize]
         public async Task<IActionResult> UpdateUser([FromRoute] long id, [FromBody] CreateUpdateUserDTO dto)
         {
             var user = await _context.Users.FirstOrDefaultAsync(q => q.Id == id);
@@ -109,6 +113,7 @@ namespace PiggyBankBackEnd.Controllers
         /// </summary>
         [HttpDelete]
         [Route("{id}")]
+        [Authorize]
         public async Task<IActionResult> DeleteUser([FromRoute] long id)
         {
             var user = await _context.Users.FirstOrDefaultAsync(q => q.Id == id);
