@@ -85,7 +85,7 @@ const Authorization =() =>{
                                 
                               </fieldset>
                               <fieldset style={{ margin : '20px' }} >
-                              <div class="text-button"><a href="/Registration">Регистрация <i class="fa fa-arrow-right"></i></a></div>
+                              <div className="text-button"><a href="/Registration">Регистрация <i className="fa fa-arrow-right"></i></a></div>
                               </fieldset>
 
                             </div>

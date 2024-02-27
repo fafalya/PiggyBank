@@ -5,7 +5,7 @@ import ImageUploading from 'react-images-uploading';
 const ImagesUpload = ({arrayImages}) => {
 
     const [images, setImages] = useState([]);
-    const maxNumber = 3;
+    const maxNumber = 1;
 
     const dataImagesFunction = () => {
         arrayImages(images);

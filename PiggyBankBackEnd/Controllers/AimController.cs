@@ -36,25 +36,33 @@ namespace PiggyBankBackEnd.Controllers
             newAim.Price = dto.Price;
             newAim.Date = dto.Date;
             newAim.WayOfSaving = dto.WayOfSaving;
-            //newAim.User = dto.User;
             newAim.UserId = dto.UserId;
-            newAim.Images = new List<ImageEntity>();
+            
             if (dto.ImagesId != null)
             {
+                newAim.Images = new List<ImageEntity>();
                 foreach (var imageId in dto.ImagesId)
                 {
                     try
                     {
                         var image = await _context.Images.FindAsync(imageId);
                         if (image != null) newAim.Images.Add(image);
+                        if (newAim.Images != null) Console.WriteLine("Добавили картинку");
+                        
                     }
                     catch (Exception ex) { return BadRequest(ex.Message); }
                 }
+                foreach (var imageId in newAim.Images)
+                {
+                    Console.WriteLine(imageId);
+                }
             }
+
             await _context.Aims.AddAsync(newAim);
             await _context.SaveChangesAsync();
 
-            return Ok("New aim is successfully created");
+            //return Ok("New aim is successfully created");
+            return Ok(newAim);
         }
 
         //read
@@ -66,6 +74,10 @@ namespace PiggyBankBackEnd.Controllers
         public async Task<ActionResult<IEnumerable<AimEntity>>> GetAllAims()
         {
             var aims = await _context.Aims.Include(aim =>aim.Images).Include(aim => aim.User).ToListAsync();
+
+            //List<ImageEntity> images = _context.Images.ToList();
+            
+            
 
             return Ok(aims);
         }
@@ -95,8 +107,10 @@ namespace PiggyBankBackEnd.Controllers
         {
             if (_context.Users.FirstOrDefault(u=>u.Id==userId) == null)
                 throw new Exception($"User with Id {userId} doesn`t exist");
-            var aimsList = await _context.Aims.Include(aim => aim.Images).Where(a => a.UserId == userId).ToListAsync();
+            var aimsList = await _context.Aims.Include(aim => aim.Images).Include(aim => aim.User).Where(a => a.UserId == userId).ToListAsync();
 
+            //List<ImageEntity> images = _context.Images.Where(i => i.FlowerId == flower.Id).ToList();
+            //flower.Images = images;
 
             return Ok(aimsList);
         }

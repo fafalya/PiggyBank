@@ -9,7 +9,6 @@ namespace PiggyBankBackEnd.DTOs
         public double Price { get; set; }
         public DateTime Date { get; set; }
         public int WayOfSaving { get; set; }
-        //public UserEntity? User { get; set; }
         public int UserId { get; set; }
         public ICollection<int>? ImagesId { get; set; }
 

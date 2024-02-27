@@ -1,35 +1,23 @@
-import React, { Fragment,useEffect, useState } from 'react';
-import axios from 'axios'
-import Modal from 'react-modal';
+import { React } from 'react';
+import Modal from 'react-bootstrap/Modal';
+import Button from 'react-bootstrap/Button';
 
-const ModalWindowOk =() => {
-    const [modalIsOpen, setModalIsOpen] = useState(false);
+const AlertModal = ({ showModal, setIsShowModal, errorMessage, title }) => {
+    const handleClose = () => setIsShowModal(false);
 
-    const openModal = () => {
-      setModalIsOpen(true);
-    };
-    
-    const closeModal = () => {
-      setModalIsOpen(false);
-    };
-
-    const modalContent = (
-        <div className="right-content">
-          <h2>Успех!</h2>
-          <p>Текст модального окна</p>
-          <button onClick={closeModal}>Закрыть</button>
-        </div>
-      );
-
-
-      return (
-        <div>
-            <h1>Modal</h1>
-          <button onClick={openModal}>Открыть модальное окно</button>
-          <Modal isOpen={modalIsOpen} onRequestClose={closeModal}>
-            {modalContent}
-          </Modal>
-        </div>
-      );
+    return (
+        <Modal show={showModal} onHide={handleClose} style={{ backgroundColor: (title === "Ошибка") ? "rgba(255,0,0,0.4)" : "rgba(0,255,0,0.4)" }}>
+            <Modal.Header closeButton>
+                <Modal.Title >{title}</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>{errorMessage}</Modal.Body>
+            <Modal.Footer>
+                <Button variant="secondary" onClick={handleClose}>
+                    Закрыть
+                </Button>
+            </Modal.Footer>
+            </Modal>
+    )
 }
-export default ModalWindowOk;
+
+export default AlertModal;

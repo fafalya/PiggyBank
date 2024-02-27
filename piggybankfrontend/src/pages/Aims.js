@@ -2,13 +2,11 @@ import React, { Fragment,useEffect, useState } from 'react';
 import Select from 'react-select';
 import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
-import { UrlAims, UrlUsers, UrlUploadImages, UrlAimsByUserId } from '../urls/urlsList';
+import { UrlBase, UrlAims, UrlUsers, UrlUploadImages, UrlAimsByUserId } from '../urls/urlsList';
 import ImagesUpload from '../components/ImagesUpload/ImagesUpload';
-import AimCards from '../components/AimCards/AimCards';
 import axios from 'axios';
-import ModalWindowOk from '../components/ModalWindow/ModalWindowOk';
 import Cookies from 'universal-cookie';
-
+import { Image } from 'react-bootstrap';
 
 
 
@@ -27,43 +25,11 @@ const Aims =()=> {
         headers: { Authorization: `Bearer ${cookies.get('access_token')}` }
     };
     
-    var today = new Date();
-    //var day = today - aimByUser.data;
 
-    const[aimList,setAimList] = useState([])
-    const[userList,setUserList] = useState([])
-    const[users,setUser]=useState()
     const[aimByUser, setAimByUser]=useState([])
     const [dataResponseImage, setDataResponseImage] = useState([]);
-    // const handleAddUser = (event) => {
-    //     let event_id = parseInt(event.target.value)
-    //     const result = userList.find(u => u.id === event_id)
-    //     setAim({
-    //         ...aim,
-    //         userId: result.id
-    //     })
-    // }
-    async function handleAddUser () {
-        // let temp_id = parseInt(selectUser.value)
-        // console.log(temp_id)
-        // const result = userList.find(u => u.id === temp_id)
-        // console.log(result.id)
-        // setAim({
-        //     ...aim,
-        //     userId: result.id
-        // })
-        // console.log(aim.userId)
-    }
-    // const handleAddWay = (event) => {
-    //     event.preventDefault();
-    //     let way = parseInt(event.target.value)
-    //     setAim({
-    //         ...aim,
-    //         waySaving: way
-    //     })
-    // }
     var imagesArray;
-    //var temp_id;
+
     const[tempId, setTempId]=useState(null);
     const handleDataImages = (data) => {
         setDataResponseImage(data);
@@ -71,25 +37,13 @@ const Aims =()=> {
 
     const WayOptions = [
         { value: '1', label: 'Магия маленьких чисел' },
-        { value: '2', label: 'Округление ежедневного остатка на счете' },
-        { value: '3', label: 'Фиксированная сумма каждый день' }
+        { value: '2', label: 'Фиксированная сумма каждый день' }
     ]
     const [selectedOption, setSelectedOption] = useState(null);   
     const WaySelect = () => (
         <Select options={WayOptions} placeholder='Выбери спсоб накопления' defaultValue={selectedOption}
         onChange={setSelectedOption}/>
     )
-
-    // const UserOptions = userList.map((u) => {
-    //     return (
-    //         {value: u.id, label: u.name}
-    //     )
-    // })
-    // const [selectUser, setSelectUser] = useState(null);
-    // const UserSelect =() => (
-    //     <Select options={UserOptions} placeholder='Выбери пользователя' defaultValue={selectUser} onChange={setSelectUser}/>
-        
-    // )
 
     const handleAddTitle =(event) => {
         event.preventDefault();
@@ -105,36 +59,15 @@ const Aims =()=> {
         <DatePicker selected={selectDate} onChange={date => setSelectedDate(date)} dateFormat={"dd/MM/yyyy"} minDate={new Date()}/>
     )
 
-
-    // const optionsAuthors = authors.map((a) => {
-    //     return (
-    //         <option value={a.id} key={a.id}>{`${a.firstName} ${a.lastName}`}</option>
-    //     )
-    // })
-
     useEffect(()=>{
         setTempId(cookies.get('userId'));
         if(tempId!==null){
             (async ()=> await Load())();
         }
-        
-        // const Load = async () => {
-        //     const result = await axios.get(UrlAims);
-        //     setAimList(result.data);
-        // }
-        // Load();
-        
+       
     },[])
 
     async function Load(){
-        // const resultLoadingAims = await axios.get(UrlAims);
-        // setAimList(resultLoadingAims.data);
-        // console.log(resultLoadingAims.data);
-
-        // const resultLoadingUsers = await axios.get(UrlUsers); 
-        // setUserList(resultLoadingUsers.data);
-        // console.log(resultLoadingUsers.data);
-
         const resultLoadingAimsByUserId = await axios.get(UrlAimsByUserId + tempId, config);
         setAimByUser(resultLoadingAimsByUserId.data);
         console.log(resultLoadingAimsByUserId.data);
@@ -143,7 +76,6 @@ const Aims =()=> {
     
 
     async function AddNewAim () {
-        console.log(selectDate)
         try {
             var tempAim = {
                 title: aim.title,
@@ -153,8 +85,7 @@ const Aims =()=> {
                 userId: tempId,
                 imagesId: aim.imagesId
             }
-            //setTempId(parseInt(selectUser.value));
-            //temp_id = parseInt(selectUser.value);
+
             console.log(tempAim)
             console.log(tempId)
             await axios.post(UrlAims, tempAim, config );
@@ -174,95 +105,78 @@ const Aims =()=> {
             await axios.post(UrlUploadImages, formData, config)
                 .then((res) => {                 
                     imagesArray = res.data;
-                })
-            console.log('Добавили изображения');
+                });
+            console.log('Изображение добавлено');
         }
         catch (e) {
-            console.log('Ошибка добавления изображений')
+            console.log('Ошибка добавления изображений');
         }
     }
 
     async function CheckAim() {
         if (aim.title != null && aim.price !=null && aim.date !=null && aim.wayOfSaving !=null && aim.userId !=null){
-            console.log('Aim is not empty');
             await AddNewAim();
-            //await LoadAims(tempId);
+
         }
-        console.log('Aim is empty')
 
     }
     async function Add(){
         await postImages();
-        await handleAddUser();
         setAim({... aim , imagesId:imagesArray});
         await CheckAim();
-        
-        //await AddNewAim();
+
     }
 
-    async function LoadAims(userId){
-        const resultLoadingAimsByUserId = await axios.get(UrlAimsByUserId + userId, config);
-        setAimByUser(resultLoadingAimsByUserId.data);
-        console.log(aimByUser);
-        
+    async function Delete(id) {
+        await axios.delete(UrlAimsByUserId + id, config);
+        Load();
+    }
+
+    function ShowDate(aimDate){
+        const second = 1000,
+        minute = second * 60,
+        hour = minute * 60,
+        day = hour * 24;
+        let countDown = new Date(aimDate).getTime();
+        let now = new Date().getTime(),
+          distance = countDown - now;
+        return (
+            Math.floor(distance / (day))
+        )
+    }
+    function SinceStart(aimDate, aimStart){
+        const second = 1000,
+        minute = second * 60,
+        hour = minute * 60,
+        day = hour * 24;
+        let countDown = new Date(aimDate).getTime();
+        let now = new Date(aimStart).getTime(),
+          distance = countDown - now;
+        return (
+            Math.floor(distance / (day))
+        )
+    }
+
+    function FirstWay(aimDate, aimPrice, aimStart){
+        let days = SinceStart(aimDate, aimStart);
+        let daysLeft = ShowDate(aimDate);
+        let dayNow = days-daysLeft;
+        if (days=daysLeft) {
+            dayNow=1;
+        }
+        let progression = Math.floor((2*aimPrice-2*days)/(days*(days-1)));
+        return (
+            1+progression*(dayNow-1)
+        )
+    }
+    function SecondWay(aimDate, aimPrice, aimStart){
+        let days = SinceStart(aimDate, aimStart);
+        return (
+            Math.floor(aimPrice/days)
+        )
     }
 
 
-
-    const ShowAim = ()=> {
-        
-        console.log("cheeeeck");
-        console.log(tempId);
-        //проблема с условием для map
-        //const condition = aimList.find(a => a.userId === tempId);
-        <Fragment>
-            <h1>ffffffffffff</h1>
-        {aimByUser.map(function fn(aim) {
-
-        return (    
-
-        <div>
-            <h1>TEEEEEEST</h1>
-        <div className="col-lg-9">
-            <div className="row">
-                <div className="col-lg-12">
-                    <div className="event-item">
-                        <div className="row">
-                            <div className="col-lg-4">
-                                <div className="thumb">
-                                    <img src="assets/images/event-page-01.jpg" alt=""/>
-                                </div>
-                            </div>
-                            <div className="col-lg-4">
-                                <div className="right-content">
-                                    <ul>
-                                        <li>
-                                            <i className="fa fa-clock-o"></i>
-                                            <h6>Sep 24 Friday<br/>11:20 AM - 10:20 PM</h6>
-                                        </li>
-                                        <li>
-                                            <i className="fa fa-map-marker"></i>
-                                            <span>{aim.title}</span>
-                                        </li>
-                                        <li>
-                                            <i className="fa fa-users"></i>
-                                            <span>540 Total Guests Attending</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </div>
-        
-        )})}
-        </Fragment>
-    }
-     
-    
     return (
         <Fragment>
             <div className="page-heading-about">
@@ -319,12 +233,6 @@ const Aims =()=> {
                                     <img src="assets/images/mini_banner_bg.jpg" alt="" style={{  height: '200px' }}/>
                                 </div>
                                 <div className="down-content">
-                                    {/* <span>Кто будет копить?</span><p style={{ margin : '10px' }}></p>
-                                    <UserSelect  style={{  width: '860px' }}/> <p style={{ margin : '10px' }}></p> */}
-                                    {/* <select class="form-select" aria-label="Default select example" placeholder="пользователь" onChange={handleAddUser} style={{  width: '860px' }}>
-                                        <option defaultValue selecte disabled>Выберите пользователя</option>
-                                        {userList.map((u) => <option value={u.id} key={u.id} >{u.name}</option>) }
-                                    </select><p style={{ margin : '10px' }}></p> */}
                                     <span>На что будем копить?</span><p style={{ margin : '10px' }}></p>
                                     <input type="text" class="form-control" style={{  width: '860px' }}
                                     value={aim.title} placeholder="Хотелка" 
@@ -348,11 +256,8 @@ const Aims =()=> {
                 </div>
             </div>
 <div>
-<ShowAim />
-</div>
 
-
-            
+</div>           
             <div className="shows-events-tabs">
         <div className="container">
             <div className="row">
@@ -366,62 +271,25 @@ const Aims =()=> {
                                         <div className="col-lg-12">
                                             <div className="heading"><h2>Мои цели</h2></div>
                                         </div>
-                                        {/* <div className="col-lg-3">
-                                            <div className="sidebar">
-                                                <div className="row">
-                                                    <div className="col-lg-12">
-                                                        <div className="heading-sidebar">
-                                                            <h4>Sort The Upcoming Shows & Events By:</h4>
-                                                        </div>
-                                                    </div>
-                                                    <div className="col-lg-12">
-                                                        <div className="month">
-                                                            <h6>Month</h6>
-                                                            <ul>
-                                                                <li><a href="#">July</a></li>
-                                                                <li><a href="#">August</a></li>
-                                                                <li><a href="#">September</a></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <div className="col-lg-12">
-                                                        <div className="category">
-                                                            <h6>Category</h6>
-                                                            <ul>
-                                                                <li><a href="#">Pop Music</a></li>
-                                                                <li><a href="#">Rock Music</a></li>
-                                                                <li><a href="#">Hip Hop Music</a></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <div className="col-lg-12">
-                                                        <div className="venues">
-                                                            <h6>Venues</h6>
-                                                            <ul>
-                                                                <li><a href="#">Radio City Musical Hall</a></li>
-                                                                <li><a href="#">Madison Square Garden</a></li>
-                                                                <li><a href="#">Royce Hall</a></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div> */}
-
-                                        {/* Showing aims */}
-                                        {/* {aimList.map(function fn(aim)  {
-                                             return ( */}
                                         {aimByUser.map((aim) => {
-                                             return (        
+                                             return (                                                     
                                         <div className="col-lg-9">
                                             <div className="row">
                                                 <div className="col-lg-12">
                                                     <div className="event-item">
                                                         <div className="row">
-
+                                                        {console.log(aim)}
                                                             <div className="col-lg-4">
                                                                 <div className="thumb">
-                                                                    <img src="assets/images/event-page-01.jpg" alt=""/>
+                                                                    {aim.images.map((i)=> 
+                                                                        <div>
+                                                                        <Image
+                                                                        style={{ height: 250, width: 250, marginTop: '70px' }}
+                                                                        src={UrlBase + i.imagePath } />
+                                                                        {console.log(UrlBase,i.imagePath)}
+                                                                        </div>
+                                                                    )
+                                                                    }                                                           
                                                                 </div>
                                                             </div>
                                                             <div className="col-lg-4">
@@ -429,20 +297,29 @@ const Aims =()=> {
                                                                     <ul>
                                                                         <li>
                                                                             <i className="fa fa-clock-o"></i>
-                                                                            <h6>Осталось копить<br/>{aim.data}</h6>
+                                                                            <span>Осталось копить дней:&nbsp;{ShowDate(aim.date)}</span>
                                                                         </li>
                                                                         <li>
-                                                                            <i class="fa fa-arrow-right"></i>
-                                                                            <span>{aim.title}</span>
+                                                                            <i className="fa fa-arrow-right"></i>
+                                                                            <span>Я коплю на:&nbsp;</span><h6>{aim.title}</h6>
                                                                         </li>
+                                                                        {(aim.wayOfSaving == 1)?  
                                                                         <li>
                                                                             <i className="fa fa-users"></i>
-                                                                            <span>{Math.floor(aim.price/aim.data)}</span>
+                                                                            <span>Сегодня нужно положить в копилку:&nbsp;{FirstWay(aim.date, aim.price, aim.start)}</span>
                                                                         </li>
+                                                                        :
+                                                                        <li>
+                                                                        <i className="fa fa-users"></i>
+                                                                        <span>Сегодня нужно положить в копилку:&nbsp;{SecondWay(aim.date, aim.price, aim.start)}</span>
+                                                                        </li>  
+                                                                        }
                                                                     </ul>
                                                                 </div>
                                                             </div>
+                                                           
                                                         </div>
+                                                        <button type="submit" id="form-submit" class="main-dark-button" onClick={()=>Delete(aim.id)} style={{ marginBlock : '10px'}} >Удалить цель</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -459,7 +336,6 @@ const Aims =()=> {
             </div>
         </div>
         </div>
-            {/* <AimCards/> */}
         </Fragment>
 
         

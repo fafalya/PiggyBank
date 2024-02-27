@@ -108,6 +108,8 @@ if (app.Environment.IsDevelopment())
     });
 }
 
+app.UseStaticFiles();
+
 app.UseCors(nameCors);
 app.UseHttpsRedirection();
 
