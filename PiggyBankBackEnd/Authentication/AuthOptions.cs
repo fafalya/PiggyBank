@@ -11,8 +11,8 @@ namespace PiggyBankBackEnd.Authentication
         public const string AUDIENCE = "localhost:3000";
         //ключ для шифрации
         const string KEY = "SymmetricSecurityKeySymmetric_09()&*1h";
-        //время жизни токена 1 минута
-        public const int LIFETIME = 1;
+        //время жизни токена 500 минут
+        public const int LIFETIME = 500;
         public static SymmetricSecurityKey GetSymmetricSecurityKey() => new SymmetricSecurityKey(Encoding.UTF8.GetBytes(KEY));
     }
 }

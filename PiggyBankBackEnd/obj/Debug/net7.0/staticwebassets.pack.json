@@ -301,6 +301,46 @@
       "PackagePath": "staticwebassets\\images\\27022024 200337about-image.jpg"
     },
     {
+      "Id": "F:\\Yulya\\repos\\PiggyBank\\PiggyBankBackEnd\\wwwroot\\images\\27022024 200659event-01.jpg",
+      "PackagePath": "staticwebassets\\images\\27022024 200659event-01.jpg"
+    },
+    {
+      "Id": "F:\\Yulya\\repos\\PiggyBank\\PiggyBankBackEnd\\wwwroot\\images\\27022024 205519like-01.jpg",
+      "PackagePath": "staticwebassets\\images\\27022024 205519like-01.jpg"
+    },
+    {
+      "Id": "F:\\Yulya\\repos\\PiggyBank\\PiggyBankBackEnd\\wwwroot\\images\\27022024 205613like-01.jpg",
+      "PackagePath": "staticwebassets\\images\\27022024 205613like-01.jpg"
+    },
+    {
+      "Id": "F:\\Yulya\\repos\\PiggyBank\\PiggyBankBackEnd\\wwwroot\\images\\27022024 210117about_bg.jpg",
+      "PackagePath": "staticwebassets\\images\\27022024 210117about_bg.jpg"
+    },
+    {
+      "Id": "F:\\Yulya\\repos\\PiggyBank\\PiggyBankBackEnd\\wwwroot\\images\\27022024 210213about_bg.jpg",
+      "PackagePath": "staticwebassets\\images\\27022024 210213about_bg.jpg"
+    },
+    {
+      "Id": "F:\\Yulya\\repos\\PiggyBank\\PiggyBankBackEnd\\wwwroot\\images\\27022024 211010event-01.jpg",
+      "PackagePath": "staticwebassets\\images\\27022024 211010event-01.jpg"
+    },
+    {
+      "Id": "F:\\Yulya\\repos\\PiggyBank\\PiggyBankBackEnd\\wwwroot\\images\\27022024 212846mini_banner_bg.jpg",
+      "PackagePath": "staticwebassets\\images\\27022024 212846mini_banner_bg.jpg"
+    },
+    {
+      "Id": "F:\\Yulya\\repos\\PiggyBank\\PiggyBankBackEnd\\wwwroot\\images\\27022024 213030mini_banner_bg.jpg",
+      "PackagePath": "staticwebassets\\images\\27022024 213030mini_banner_bg.jpg"
+    },
+    {
+      "Id": "F:\\Yulya\\repos\\PiggyBank\\PiggyBankBackEnd\\wwwroot\\images\\27022024 214455shows_events_bg.jpg",
+      "PackagePath": "staticwebassets\\images\\27022024 214455shows_events_bg.jpg"
+    },
+    {
+      "Id": "F:\\Yulya\\repos\\PiggyBank\\PiggyBankBackEnd\\wwwroot\\images\\28022024 211851venue-02.jpg",
+      "PackagePath": "staticwebassets\\images\\28022024 211851venue-02.jpg"
+    },
+    {
       "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.PiggyBankBackEnd.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },

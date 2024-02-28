@@ -1616,7 +1616,8 @@ Shows Events Page
 
 .shows-events-tabs .heading-tabs {
   padding: 20px 0px;
-  border-bottom: 1px dotted #d7dadc;
+  /* border-bottom: 1px dotted #d7dadc; */
+  border-bottom: 1px dotted #2d95db;
 }
 
 .shows-events-tabs .heading-tabs .main-dark-button {
@@ -1650,7 +1651,8 @@ Shows Events Page
   border-bottom: none;
 }
 .shows-events-tabs #tabs ul .ui-tabs-active a {
-  color: #656c74;
+  /* color: #656c74; */
+  color: #073870;
   position: relative;
 }
 .shows-events-tabs #tabs ul .ui-tabs-active a:after {

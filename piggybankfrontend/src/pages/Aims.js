@@ -34,7 +34,7 @@ const Aims =()=> {
     const handleDataImages = (data) => {
         setDataResponseImage(data);
     }
-
+    
     const WayOptions = [
         { value: '1', label: 'Магия маленьких чисел' },
         { value: '2', label: 'Фиксированная сумма каждый день' }
@@ -83,11 +83,8 @@ const Aims =()=> {
                 date: selectDate,
                 wayOfSaving: parseInt(selectedOption.value),
                 userId: tempId,
-                imagesId: aim.imagesId
+                imagesId: imagesArray
             }
-
-            console.log(tempAim)
-            console.log(tempId)
             await axios.post(UrlAims, tempAim, config );
             alert("Добавили новую цель");
             Load();
@@ -106,7 +103,6 @@ const Aims =()=> {
                 .then((res) => {                 
                     imagesArray = res.data;
                 });
-            console.log('Изображение добавлено');
         }
         catch (e) {
             console.log('Ошибка добавления изображений');
@@ -122,7 +118,6 @@ const Aims =()=> {
     }
     async function Add(){
         await postImages();
-        setAim({... aim , imagesId:imagesArray});
         await CheckAim();
 
     }
@@ -150,8 +145,8 @@ const Aims =()=> {
         hour = minute * 60,
         day = hour * 24;
         let countDown = new Date(aimDate).getTime();
-        let now = new Date(aimStart).getTime(),
-          distance = countDown - now;
+        let start = new Date(aimStart).getTime(),
+          distance = countDown - start;
         return (
             Math.floor(distance / (day))
         )
@@ -160,13 +155,15 @@ const Aims =()=> {
     function FirstWay(aimDate, aimPrice, aimStart){
         let days = SinceStart(aimDate, aimStart);
         let daysLeft = ShowDate(aimDate);
-        let dayNow = days-daysLeft;
-        if (days=daysLeft) {
-            dayNow=1;
+        let dayNow = days-daysLeft;  
+        let progression = Math.ceil((2*aimPrice-2*days)/(days*(days-1)));
+        if (dayNow!==0){
+            return (
+                1+progression*(dayNow-1)
+            )
         }
-        let progression = Math.floor((2*aimPrice-2*days)/(days*(days-1)));
-        return (
-            1+progression*(dayNow-1)
+         else return (
+            1
         )
     }
     function SecondWay(aimDate, aimPrice, aimStart){
@@ -273,12 +270,11 @@ const Aims =()=> {
                                         </div>
                                         {aimByUser.map((aim) => {
                                              return (                                                     
-                                        <div className="col-lg-9">
+                                        <div className="col-lg-9" >
                                             <div className="row">
                                                 <div className="col-lg-12">
                                                     <div className="event-item">
                                                         <div className="row">
-                                                        {console.log(aim)}
                                                             <div className="col-lg-4">
                                                                 <div className="thumb">
                                                                     {aim.images.map((i)=> 
@@ -286,7 +282,6 @@ const Aims =()=> {
                                                                         <Image
                                                                         style={{ height: 250, width: 250, marginTop: '70px' }}
                                                                         src={UrlBase + i.imagePath } />
-                                                                        {console.log(UrlBase,i.imagePath)}
                                                                         </div>
                                                                     )
                                                                     }                                                           
